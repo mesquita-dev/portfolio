@@ -61,16 +61,105 @@ function StudyBlock({
 }
 
 const projectPlaceholders = [
-  { id: 'p1', label: 'Projeto 1' },
-  { id: 'p2', label: 'Projeto 2' },
+  {
+    id: 'p1',
+    label: 'Projeto 1',
+    src: '/admentum1.jpg',
+    usePadding: true,
+    href: '/admentum',
+  },
+  { id: 'p2', label: 'Projeto 2', src: '/AdvHome.jpg', usePadding: true },
   { id: 'p3', label: 'Projeto 3' },
 ] as const
 
-export default function App() {
+function AdmentumPage() {
   return (
     <div className="flex h-full min-h-0 flex-col overflow-hidden bg-white font-sans text-black">
       <div className="flex min-h-0 w-full flex-1 flex-col p-3">
-        <div className="grid min-h-0 flex-1 grid-cols-1 gap-16 max-md:grid-rows-[minmax(0,1fr)_minmax(0,1fr)] md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-4 md:overflow-hidden">
+        <div className="grid min-h-0 flex-1 grid-cols-1 gap-16 max-md:grid-rows-[minmax(0,1fr)_minmax(0,1fr)] md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
+          <div className="scrollbar-none flex min-h-0 flex-col overflow-y-auto overscroll-y-contain">
+            <header className="mb-20 flex items-center justify-between gap-4">
+              <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
+                Admentum
+              </h1>
+              <a
+                href="/"
+                className="text-sm leading-[140%] tracking-[-1%] text-black underline-offset-4 transition-opacity hover:opacity-70 hover:underline"
+              >
+                Voltar
+              </a>
+            </header>
+
+            <div className="space-y-2 mb-12">
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                Case do produto Admentum. Aqui vamos manter a mesma estrutura de
+                portfolio com descrição do projeto, contexto, desafios e
+                resultados.
+              </p>
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                Podemos trocar estes textos depois pelos conteúdos finais deste
+                projeto.
+              </p>
+            </div>
+
+            <section className="mb-12">
+              <SectionLabel className="mb-2">Project details</SectionLabel>
+              <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+                <ExperienceBlock
+                  title="Role"
+                  org="Product Design"
+                  period="2023 — 2026"
+                />
+                <ExperienceBlock
+                  title="Platform"
+                  org="Web App"
+                  period="SaaS"
+                />
+              </div>
+            </section>
+          </div>
+
+          <aside className="scrollbar-none min-h-0 overflow-y-auto overscroll-y-contain">
+            <div className="flex flex-col gap-4">
+              <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/admentum1.jpg"
+                      alt="Admentum capa"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/AdvHome.jpg"
+                      alt="Admentum home"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function App() {
+  if (window.location.pathname === '/admentum') {
+    return <AdmentumPage />
+  }
+
+  return (
+    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-white font-sans text-black">
+      <div className="flex min-h-0 w-full flex-1 flex-col p-3">
+        <div className="grid min-h-0 flex-1 grid-cols-1 gap-16 max-md:grid-rows-[minmax(0,1fr)_minmax(0,1fr)] md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
           {/* 30% — conteúdo (scroll interno, barra oculta) */}
           <div className="scrollbar-none flex min-h-0 flex-col overflow-y-auto overscroll-y-contain">
             <header className="mb-20 flex items-center justify-between gap-4">
@@ -105,22 +194,19 @@ export default function App() {
 
             <div className="space-y-2 mb-12">
               <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
-                Currently Product Designer (
-                <em className="italic">studying to be a Design Engineer</em>
-                {') at '}
-                <span className="text-black">Edunext</span>
-                {'. Founder at '}
-                <span className="text-black">Admentum</span>
-                {', the platform to connect lawyer to clients and make her meetings. Previously, I\'m Founding Product Designer at '}
-                <span className="text-black">Granto Seguros</span>
-                {
-                  ' where I create some platforms and a design system from scratch.'
-                }
+                Product Designer with 3+ years of experience building digital products from the ground up — often as the only designer on the team, which taught me to move quickly, make decisions, and collaborate closely with engineers and stakeholders.
               </p>
+
               <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
-                Detail-oriented and a perfectionist, I spend a time to
-                craft good experiences and more easier for the users and
-                engineers code the interface.
+                As the founding designer at Granto Seguros, one of Brazil's emerging insurtech startups, I led the creation of their design system, drove alignment with stakeholders, and embedded user research into the product culture from day one.
+              </p>
+
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                Beyond my design work, I'm also the co-founder of a legaltech startup, where I wear two hats as both founder and design engineer.
+              </p>
+
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                I believe great design isn't just about aesthetics — it's about making complex experiences feel simple for real people.
               </p>
             </div>
 
@@ -198,8 +284,37 @@ export default function App() {
               {projectPlaceholders.map((p) => (
                 <figure
                   key={p.id}
-                  className="aspect-696/515 w-full bg-[#d8d8d8] max-md:min-h-[240px]"
+                  className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px] rounded-md"
                 >
+                  {'src' in p ? (
+                    <div
+                      className={`flex h-full w-full items-center justify-center ${
+                        p.usePadding ? 'p-16' : 'p-0'
+                      }`}
+                    >
+                      {'href' in p ? (
+                        <a
+                          href={p.href}
+                          className="block h-full w-full overflow-hidden rounded-lg"
+                          aria-label={`Abrir ${p.label}`}
+                        >
+                          <img
+                            src={p.src}
+                            alt={p.label}
+                            className="h-full w-full object-contain"
+                          />
+                        </a>
+                      ) : (
+                        <div className="h-full w-full overflow-hidden rounded-lg">
+                          <img
+                            src={p.src}
+                            alt={p.label}
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  ) : null}
                   <figcaption className="sr-only">{p.label}</figcaption>
                 </figure>
               ))}
