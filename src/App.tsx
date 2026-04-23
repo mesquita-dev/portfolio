@@ -103,18 +103,53 @@ function AdmentumPage() {
             </div>
 
             <section className="mb-12">
-              <SectionLabel className="mb-2">Project details</SectionLabel>
-              <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
-                <ExperienceBlock
-                  title="Role"
-                  org="Product Design"
-                  period="2023 — 2026"
-                />
-                <ExperienceBlock
-                  title="Platform"
-                  org="Web App"
-                  period="SaaS"
-                />
+              <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-4">
+                <div>
+                  <SectionLabel className="mb-2">Role</SectionLabel>
+                  <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                    Founder / Design Engineer
+                  </p>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Team</SectionLabel>
+                  <div className="flex flex-col gap-[4px]">
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Me
+                    </p>
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Bruno Silva — Co-founder
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Stacks</SectionLabel>
+                  <div className="flex flex-col gap-[4px]">
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Figma
+                    </p>
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      React
+                    </p>
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Tailwind
+                    </p>
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      TypeScript
+                    </p>
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Storybook
+                    </p>
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Motion
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Duration</SectionLabel>
+                  <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                    2025 — Ongoing
+                  </p>
+                </div>
               </div>
             </section>
           </div>
@@ -122,19 +157,19 @@ function AdmentumPage() {
           <aside className="scrollbar-none min-h-0 overflow-y-auto overscroll-y-contain">
             <div className="flex flex-col gap-4">
               <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-0">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum1.jpg"
                       alt="Admentum capa"
-                      className="h-full w-full object-contain"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 </div>
               </figure>
-              <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
                 <div className="flex h-full w-full items-center justify-center p-16">
-                  <div className="h-full w-full overflow-hidden rounded-lg">
+                  <div className="h-full w-full overflow-hidden rounded-lg bg-white">
                     <img
                       src="/AdvHome.jpg"
                       alt="Admentum home"
