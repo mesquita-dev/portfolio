@@ -84,21 +84,27 @@ function AdmentumPage() {
               </h1>
               <a
                 href="/"
-                className="text-sm leading-[140%] tracking-[-1%] text-black underline-offset-4 transition-opacity hover:opacity-70 hover:underline"
+                className="text-sm leading-[140%] tracking-[-1%] text-[#757575] underline-offset-4 transition-opacity hover:text-black hover:opacity-70 hover:underline"
               >
-                Voltar
+                Back
               </a>
             </header>
 
             <div className="space-y-2 mb-12">
               <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
-                Case do produto Admentum. Aqui vamos manter a mesma estrutura de
-                portfolio com descrição do projeto, contexto, desafios e
-                resultados.
+                Admentum was born from a real pain point: finding and hiring a trustworthy lawyer in Brazil is still a confusing, informal process — heavily reliant on personal referrals and WhatsApp conversations.
               </p>
               <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
-                Podemos trocar estes textos depois pelos conteúdos finais deste
-                projeto.
+                After benchmarking competitors and conducting user interviews, it became clear the market lacked a direct, transparent, and digital solution to connect people with qualified lawyers. That insight pushed me to take the entrepreneurial leap.
+              </p>
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                Drawing from my experience with digital products, I knew that building without a solid visual foundation would be costly down the road. Before designing a single product screen, I built Hades — a Design System from scratch using React, Tailwind, and Storybook. I defined primitive tokens, components, and variants to ensure consistency and speed throughout development.
+              </p>
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                I invited a friend to co-found the company, and together we started building. I took the lead as a Design Engineer — designing interfaces in Figma and coding the front-end myself using React, Tailwind, TypeScript, and Motion. This overlap between design and engineering gave me full ownership over the final user experience.
+              </p>
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                Admentum is currently in the validation phase. We're testing with early users, gathering feedback, and iterating quickly.
               </p>
             </div>
 
@@ -142,6 +148,9 @@ function AdmentumPage() {
                     <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
                       Motion
                     </p>
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Cursor
+                    </p>
                   </div>
                 </div>
                 <div>
@@ -169,10 +178,142 @@ function AdmentumPage() {
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
                 <div className="flex h-full w-full items-center justify-center p-16">
-                  <div className="h-full w-full overflow-hidden rounded-lg bg-white">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/AdvHome.jpg"
                       alt="Admentum home"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/components-ad.png"
+                      alt="Admentum components"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Login.jpg"
+                      alt="Admentum login"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Cadastro%20advogado.jpg"
+                      alt="Admentum cadastro advogado"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-0">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/A.jpg"
+                      alt="Admentum A"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Adv%20-%20Perfil.jpg"
+                      alt="Admentum perfil"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Adv%20-%20Reuni%C3%B5es.jpg"
+                      alt="Admentum reunioes"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Adv%20-%20Config.jpg"
+                      alt="Admentum config"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-0">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Awhite.jpg"
+                      alt="Admentum Awhite"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Cliente%20-%20P%C3%A1gina%20inicial.jpg"
+                      alt="Cliente pagina inicial"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Cliente%20-%20Advogados.jpg"
+                      alt="Cliente advogados"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Cliente%20-%20Reuni%C3%B5es%20%28Agendadas%29.jpg"
+                      alt="Cliente reunioes"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/Cliente%20-%20Config.jpg"
+                      alt="Cliente config"
                       className="h-full w-full object-contain"
                     />
                   </div>
