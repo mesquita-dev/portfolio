@@ -60,16 +60,14 @@ function StudyBlock({
   )
 }
 
-const projectPlaceholders = [
+const publishedProjects = [
   {
-    id: 'p1',
-    label: 'Projeto 1',
-    src: '/admentum1.jpg',
+    id: 'admentum',
+    label: 'Admentum',
+    src: '/AdvHome.jpg',
     usePadding: true,
     href: '/admentum',
   },
-  { id: 'p2', label: 'Projeto 2', src: '/AdvHome.jpg', usePadding: true },
-  { id: 'p3', label: 'Projeto 3' },
 ] as const
 
 function AdmentumPage() {
@@ -457,40 +455,28 @@ export default function App() {
           {/* 70% — imagens (scroll interno, barra oculta) */}
           <aside className="scrollbar-none min-h-0 overflow-y-auto overscroll-y-contain">
             <div className="flex flex-col gap-4">
-              {projectPlaceholders.map((p) => (
+              {publishedProjects.map((p) => (
                 <figure
                   key={p.id}
                   className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px] rounded-md"
                 >
-                  {'src' in p ? (
-                    <div
-                      className={`flex h-full w-full items-center justify-center ${
-                        p.usePadding ? 'p-16' : 'p-0'
-                      }`}
+                  <div
+                    className={`flex h-full w-full items-center justify-center ${
+                      p.usePadding ? 'p-16' : 'p-0'
+                    }`}
+                  >
+                    <a
+                      href={p.href}
+                      className="block h-full w-full overflow-hidden rounded-lg"
+                      aria-label={`Abrir ${p.label}`}
                     >
-                      {'href' in p ? (
-                        <a
-                          href={p.href}
-                          className="block h-full w-full overflow-hidden rounded-lg"
-                          aria-label={`Abrir ${p.label}`}
-                        >
-                          <img
-                            src={p.src}
-                            alt={p.label}
-                            className="h-full w-full object-contain"
-                          />
-                        </a>
-                      ) : (
-                        <div className="h-full w-full overflow-hidden rounded-lg">
-                          <img
-                            src={p.src}
-                            alt={p.label}
-                            className="h-full w-full object-contain"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  ) : null}
+                      <img
+                        src={p.src}
+                        alt={p.label}
+                        className="h-full w-full object-contain"
+                      />
+                    </a>
+                  </div>
                   <figcaption className="sr-only">{p.label}</figcaption>
                 </figure>
               ))}
