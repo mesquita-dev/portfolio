@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import type { ReactNode } from 'react'
 
 function SectionLabel({
@@ -64,7 +65,7 @@ const publishedProjects = [
   {
     id: 'admentum',
     label: 'Admentum',
-    src: '/AdvHome.jpg',
+    src: '/admentum/AdvHome.jpg',
     usePadding: true,
     href: '/admentum',
   },
@@ -167,7 +168,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-0">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/admentum1.jpg"
+                      src="/admentum/admentum1.jpg"
                       alt="Admentum capa"
                       className="h-full w-full object-cover"
                     />
@@ -178,7 +179,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/AdvHome.jpg"
+                      src="/admentum/AdvHome.jpg"
                       alt="Admentum home"
                       className="h-full w-full object-contain"
                     />
@@ -189,7 +190,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/components-ad.png"
+                      src="/admentum/components-ad.png"
                       alt="Admentum components"
                       className="h-full w-full object-contain"
                     />
@@ -200,7 +201,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Login.jpg"
+                      src="/admentum/Login.jpg"
                       alt="Admentum login"
                       className="h-full w-full object-contain"
                     />
@@ -211,7 +212,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Cadastro%20advogado.jpg"
+                      src="/admentum/Cadastro%20advogado.jpg"
                       alt="Admentum cadastro advogado"
                       className="h-full w-full object-contain"
                     />
@@ -222,7 +223,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-0">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/A.jpg"
+                      src="/admentum/A.jpg"
                       alt="Admentum A"
                       className="h-full w-full object-cover"
                     />
@@ -233,7 +234,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Adv%20-%20Perfil.jpg"
+                      src="/admentum/Adv%20-%20Perfil.jpg"
                       alt="Admentum perfil"
                       className="h-full w-full object-contain"
                     />
@@ -244,7 +245,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Adv%20-%20Reuni%C3%B5es.jpg"
+                      src="/admentum/Adv%20-%20Reuni%C3%B5es.jpg"
                       alt="Admentum reunioes"
                       className="h-full w-full object-contain"
                     />
@@ -255,7 +256,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Adv%20-%20Config.jpg"
+                      src="/admentum/Adv%20-%20Config.jpg"
                       alt="Admentum config"
                       className="h-full w-full object-contain"
                     />
@@ -266,7 +267,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-0">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Awhite.jpg"
+                      src="/admentum/Awhite.jpg"
                       alt="Admentum Awhite"
                       className="h-full w-full object-cover"
                     />
@@ -277,7 +278,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Cliente%20-%20P%C3%A1gina%20inicial.jpg"
+                      src="/admentum/Cliente%20-%20P%C3%A1gina%20inicial.jpg"
                       alt="Cliente pagina inicial"
                       className="h-full w-full object-contain"
                     />
@@ -288,7 +289,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Cliente%20-%20Advogados.jpg"
+                      src="/admentum/Cliente%20-%20Advogados.jpg"
                       alt="Cliente advogados"
                       className="h-full w-full object-contain"
                     />
@@ -299,7 +300,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Cliente%20-%20Reuni%C3%B5es%20%28Agendadas%29.jpg"
+                      src="/admentum/Cliente%20-%20Reuni%C3%B5es%20%28Agendadas%29.jpg"
                       alt="Cliente reunioes"
                       className="h-full w-full object-contain"
                     />
@@ -310,7 +311,7 @@ function AdmentumPage() {
                 <div className="flex h-full w-full items-center justify-center p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
-                      src="/Cliente%20-%20Config.jpg"
+                      src="/admentum/Cliente%20-%20Config.jpg"
                       alt="Cliente config"
                       className="h-full w-full object-contain"
                     />
@@ -326,6 +327,17 @@ function AdmentumPage() {
 }
 
 export default function App() {
+  useEffect(() => {
+    const pathname = window.location.pathname
+
+    if (pathname === '/admentum') {
+      document.title = 'Admentum'
+      return
+    }
+
+    document.title = 'Lucas Mesquita | Product Designer'
+  }, [])
+
   if (window.location.pathname === '/admentum') {
     return <AdmentumPage />
   }
