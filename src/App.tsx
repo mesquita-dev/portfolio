@@ -126,7 +126,7 @@ function AdmentumPage() {
             </div>
 
             <section className="mb-12">
-              <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-4">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-4">
                 <div>
                   <SectionLabel className="mb-2">Role</SectionLabel>
                   <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
