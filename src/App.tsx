@@ -73,10 +73,10 @@ const publishedProjects = [
 
 function AdmentumPage() {
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-white font-sans text-black">
-      <div className="flex min-h-0 w-full flex-1 flex-col p-3">
-        <div className="grid min-h-0 flex-1 grid-cols-1 gap-16 max-md:grid-rows-[minmax(0,1fr)_minmax(0,1fr)] md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
-          <div className="scrollbar-none flex min-h-0 flex-col overflow-y-auto overscroll-y-contain">
+    <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
+      <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
+        <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
+          <div className="scrollbar-none flex flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Admentum
@@ -117,7 +117,7 @@ function AdmentumPage() {
                 </div>
                 <div>
                   <SectionLabel className="mb-2">Team</SectionLabel>
-                  <div className="flex flex-col gap-[4px]">
+                  <div className="flex flex-row flex-wrap gap-2 md:flex-col md:gap-[4px]">
                     <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
                       Me
                     </p>
@@ -128,7 +128,7 @@ function AdmentumPage() {
                 </div>
                 <div>
                   <SectionLabel className="mb-2">Stacks</SectionLabel>
-                  <div className="flex flex-col gap-[4px]">
+                  <div className="flex flex-row flex-wrap gap-2 md:flex-col md:gap-[4px]">
                     <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
                       Figma
                     </p>
@@ -162,7 +162,7 @@ function AdmentumPage() {
             </section>
           </div>
 
-          <aside className="scrollbar-none min-h-0 overflow-y-auto overscroll-y-contain">
+          <aside className="scrollbar-none overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
             <div className="flex flex-col gap-4">
               <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
                 <div className="flex h-full w-full items-center justify-center p-0">
@@ -176,7 +176,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/AdvHome.jpg"
@@ -187,7 +187,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/components-ad.png"
@@ -198,7 +198,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Login.jpg"
@@ -209,7 +209,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Cadastro%20advogado.jpg"
@@ -231,7 +231,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Adv%20-%20Perfil.jpg"
@@ -242,7 +242,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Adv%20-%20Reuni%C3%B5es.jpg"
@@ -253,7 +253,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Adv%20-%20Config.jpg"
@@ -275,7 +275,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Cliente%20-%20P%C3%A1gina%20inicial.jpg"
@@ -286,7 +286,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Cliente%20-%20Advogados.jpg"
@@ -297,7 +297,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Cliente%20-%20Reuni%C3%B5es%20%28Agendadas%29.jpg"
@@ -308,7 +308,7 @@ function AdmentumPage() {
                 </div>
               </figure>
               <figure className="aspect-696/515 w-full overflow-hidden rounded-lg bg-[#f2f2f2] max-md:min-h-[240px]">
-                <div className="flex h-full w-full items-center justify-center p-16">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
                   <div className="h-full w-full overflow-hidden rounded-lg">
                     <img
                       src="/admentum/Cliente%20-%20Config.jpg"
@@ -343,11 +343,11 @@ export default function App() {
   }
 
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-white font-sans text-black">
-      <div className="flex min-h-0 w-full flex-1 flex-col p-3">
-        <div className="grid min-h-0 flex-1 grid-cols-1 gap-16 max-md:grid-rows-[minmax(0,1fr)_minmax(0,1fr)] md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
+      <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
+        <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
           {/* 30% — conteúdo (scroll interno, barra oculta) */}
-          <div className="scrollbar-none flex min-h-0 flex-col overflow-y-auto overscroll-y-contain">
+          <div className="scrollbar-none flex flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Lucas Mesquita
@@ -465,7 +465,7 @@ export default function App() {
           </div>
 
           {/* 70% — imagens (scroll interno, barra oculta) */}
-          <aside className="scrollbar-none min-h-0 overflow-y-auto overscroll-y-contain">
+          <aside className="scrollbar-none overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
             <div className="flex flex-col gap-4">
               {publishedProjects.map((p) => (
                 <figure
@@ -474,7 +474,7 @@ export default function App() {
                 >
                   <div
                     className={`flex h-full w-full items-center justify-center ${
-                      p.usePadding ? 'p-16' : 'p-0'
+                      p.usePadding ? 'p-4 md:p-16' : 'p-0'
                     }`}
                   >
                     <a
