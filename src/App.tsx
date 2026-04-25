@@ -61,15 +61,33 @@ function StudyBlock({
   )
 }
 
-const publishedProjects = [
+type PublishedProject = {
+  id: string
+  label: string
+  src: string
+  mediaType: 'image' | 'video'
+  usePadding: boolean
+  href?: string
+}
+
+const publishedProjects: PublishedProject[] = [
   {
     id: 'admentum',
     label: 'Admentum',
     src: '/admentum/AdvHome.jpg',
+    mediaType: 'image',
     usePadding: true,
     href: '/admentum',
   },
-] as const
+  {
+    id: 'genetica',
+    label: 'Genetica',
+    src: '/genetica/geneticavideo2.mp4',
+    mediaType: 'video',
+    usePadding: true,
+    href: '/genetica-mais',
+  },
+]
 
 function AdmentumPage() {
   return (
@@ -326,6 +344,191 @@ function AdmentumPage() {
   )
 }
 
+function GeneticaMaisPage() {
+  return (
+    <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
+      <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
+        <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
+          <div className="scrollbar-none flex flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
+            <header className="mb-20 flex items-center justify-between gap-4">
+              <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
+                Genetica Mais
+              </h1>
+              <a
+                href="/"
+                className="text-sm leading-[140%] tracking-[-1%] text-[#757575] underline-offset-4 transition-opacity hover:text-black hover:opacity-70 hover:underline"
+              >
+                Back
+              </a>
+            </header>
+
+            <div className="mb-12 space-y-2">
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                Case page in progress. This space will host the complete
+                Genetica Mais story, including context, process, and outcomes.
+              </p>
+              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+                For now, the page already follows the same structure and
+                responsive behavior as the Admentum case.
+              </p>
+            </div>
+
+            <section className="mb-12">
+              <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-4">
+                <div>
+                  <SectionLabel className="mb-2">Role</SectionLabel>
+                  <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                    Product Designer
+                  </p>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Team</SectionLabel>
+                  <div className="flex flex-col gap-[4px]">
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Myself
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Stacks</SectionLabel>
+                  <div className="flex flex-row flex-wrap gap-2 md:flex-col md:gap-[4px]">
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Figma
+                    </p>
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Motion
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Duration</SectionLabel>
+                  <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                    2024 — 2025
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside className="scrollbar-none overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
+            <div className="flex flex-col gap-4">
+              <figure className="h-[clamp(260px,40vw,560px)] w-full rounded-md bg-[#f2f2f2]">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <video
+                      className="h-full w-full object-contain"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label="Genetica Mais preview"
+                    >
+                      <source src="/genetica/geneticavideo2.mp4" type="video/mp4" />
+                      Seu navegador nao suporta video HTML5.
+                    </video>
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-md bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/genetica/components.png"
+                      alt="Genetica components"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-md bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/genetica/Start.png"
+                      alt="Genetica Start"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-md bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/genetica/Login.png"
+                      alt="Genetica Login"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-md bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/genetica/Register.png"
+                      alt="Genetica Register"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="h-[clamp(260px,40vw,560px)] w-full rounded-md bg-[#f2f2f2]">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <video
+                      className="h-full w-full object-contain"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label="Genetica Mais home video"
+                    >
+                      <source src="/genetica/home.mp4" type="video/mp4" />
+                      Seu navegador nao suporta video HTML5.
+                    </video>
+                  </div>
+                </div>
+              </figure>
+              <figure className="aspect-696/515 w-full overflow-hidden rounded-md bg-[#f2f2f2] max-md:min-h-[240px]">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <img
+                      src="/genetica/mfc.png"
+                      alt="Genetica MFC"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
+              </figure>
+              <figure className="h-[clamp(260px,40vw,560px)] w-full rounded-md bg-[#f2f2f2]">
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <div className="h-full w-full overflow-hidden rounded-lg">
+                    <video
+                      className="h-full w-full object-contain"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      aria-label="Genetica Mais comprar embryo video"
+                    >
+                      <source src="/genetica/comprar-embryo.mp4" type="video/mp4" />
+                      Seu navegador nao suporta video HTML5.
+                    </video>
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function App() {
   useEffect(() => {
     const pathname = window.location.pathname
@@ -335,11 +538,20 @@ export default function App() {
       return
     }
 
+    if (pathname === '/genetica-mais') {
+      document.title = 'Genetica Mais'
+      return
+    }
+
     document.title = 'Lucas Mesquita | Product Designer'
   }, [])
 
   if (window.location.pathname === '/admentum') {
     return <AdmentumPage />
+  }
+
+  if (window.location.pathname === '/genetica-mais') {
+    return <GeneticaMaisPage />
   }
 
   return (
@@ -470,24 +682,60 @@ export default function App() {
               {publishedProjects.map((p) => (
                 <figure
                   key={p.id}
-                  className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px] rounded-md"
+                  className={`w-full bg-[#f2f2f2] rounded-md ${
+                    p.mediaType === 'video'
+                      ? 'h-[clamp(260px,40vw,560px)]'
+                      : 'aspect-696/515 max-md:min-h-[240px]'
+                  }`}
                 >
                   <div
                     className={`flex h-full w-full items-center justify-center ${
                       p.usePadding ? 'p-4 md:p-16' : 'p-0'
                     }`}
                   >
-                    <a
-                      href={p.href}
-                      className="block h-full w-full overflow-hidden rounded-lg"
-                      aria-label={`Abrir ${p.label}`}
-                    >
-                      <img
-                        src={p.src}
-                        alt={p.label}
-                        className="h-full w-full object-contain"
-                      />
-                    </a>
+                    {p.href ? (
+                      <a
+                        href={p.href}
+                        className="block h-full w-full overflow-hidden rounded-lg"
+                        aria-label={`Abrir ${p.label}`}
+                      >
+                        {p.mediaType === 'video' ? (
+                          <video
+                            className="h-full w-full object-contain"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="auto"
+                            aria-label={p.label}
+                          >
+                            <source src={p.src} type="video/mp4" />
+                            Seu navegador nao suporta video HTML5.
+                          </video>
+                        ) : (
+                          <img
+                            src={p.src}
+                            alt={p.label}
+                            className="h-full w-full object-contain"
+                          />
+                        )}
+                      </a>
+                    ) : (
+                      <div className="h-full w-full overflow-hidden rounded-lg">
+                        <video
+                          className="h-full w-full object-contain"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          preload="auto"
+                          aria-label={p.label}
+                        >
+                          <source src={p.src} type="video/mp4" />
+                          Seu navegador nao suporta video HTML5.
+                        </video>
+                      </div>
+                    )}
                   </div>
                   <figcaption className="sr-only">{p.label}</figcaption>
                 </figure>
