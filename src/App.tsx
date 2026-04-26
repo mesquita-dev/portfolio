@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 
 function SectionLabel({
@@ -88,6 +88,20 @@ const publishedProjects: PublishedProject[] = [
     href: '/genetica-mais',
   },
 ]
+
+const preloaderMessages = [
+  'Product Designer',
+  'Sometimes write code',
+  'Brazilian',
+  "Let's check out my work",
+]
+
+const PRELOADER_HOLD_MS = 1200
+const PRELOADER_TRANSITION_MS = 520
+const preloaderEnterAnimation =
+  'preloader-roll-up-enter 520ms cubic-bezier(0.22, 1, 0.36, 1)'
+const preloaderExitAnimation =
+  'preloader-roll-up-exit 520ms cubic-bezier(0.22, 1, 0.36, 1)'
 
 function AdmentumPage() {
   return (
@@ -537,6 +551,11 @@ function GeneticaMaisPage() {
 }
 
 export default function App() {
+  const isHomePage = window.location.pathname === '/'
+  const [preloaderIndex, setPreloaderIndex] = useState(0)
+  const [showPreloader, setShowPreloader] = useState(isHomePage)
+  const [isPreloaderExiting, setIsPreloaderExiting] = useState(false)
+
   useEffect(() => {
     const pathname = window.location.pathname
 
@@ -553,12 +572,95 @@ export default function App() {
     document.title = 'Lucas Mesquita | Product Designer'
   }, [])
 
+  useEffect(() => {
+    if (!showPreloader) {
+      return
+    }
+
+    const isLastMessage = preloaderIndex === preloaderMessages.length - 1
+    const timeout = window.setTimeout(() => {
+      if (!isPreloaderExiting) {
+        setIsPreloaderExiting(true)
+        return
+      }
+
+      if (isLastMessage) {
+        setShowPreloader(false)
+        return
+      }
+
+      setPreloaderIndex((current) => current + 1)
+      setIsPreloaderExiting(false)
+    }, isPreloaderExiting ? PRELOADER_TRANSITION_MS : PRELOADER_HOLD_MS)
+
+    return () => {
+      window.clearTimeout(timeout)
+    }
+  }, [isPreloaderExiting, preloaderIndex, showPreloader])
+
+  useEffect(() => {
+    if (!showPreloader) {
+      return
+    }
+
+    if (preloaderIndex === 0) {
+      return
+    }
+
+    setIsPreloaderExiting(false)
+  }, [preloaderIndex, showPreloader])
+
   if (window.location.pathname === '/admentum') {
     return <AdmentumPage />
   }
 
   if (window.location.pathname === '/genetica-mais') {
     return <GeneticaMaisPage />
+  }
+
+  if (showPreloader) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-white px-6 text-center">
+        <div className="h-5 overflow-hidden">
+          <h1
+            key={preloaderIndex}
+            className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%] text-black will-change-transform"
+            style={{
+              animation: isPreloaderExiting
+                ? preloaderExitAnimation
+                : preloaderEnterAnimation,
+            }}
+          >
+            {preloaderMessages[preloaderIndex]}
+          </h1>
+        </div>
+        <style>
+          {`
+            @keyframes preloader-roll-up-enter {
+              0% {
+                transform: translateY(130%);
+                opacity: 0;
+              }
+              100% {
+                transform: translateY(0);
+                opacity: 1;
+              }
+            }
+
+            @keyframes preloader-roll-up-exit {
+              0% {
+                transform: translateY(0);
+                opacity: 1;
+              }
+              100% {
+                transform: translateY(-130%);
+                opacity: 0;
+              }
+            }
+          `}
+        </style>
+      </div>
+    )
   }
 
   return (
