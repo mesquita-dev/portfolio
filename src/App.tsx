@@ -552,8 +552,16 @@ function GeneticaMaisPage() {
 
 export default function App() {
   const isHomePage = window.location.pathname === '/'
+  const navigationEntry = performance.getEntriesByType(
+    'navigation',
+  )[0] as PerformanceNavigationTiming | undefined
+  const isReloadNavigation = navigationEntry?.type === 'reload'
+  const shouldShowPreloaderOnHome =
+    isHomePage &&
+    (isReloadNavigation || sessionStorage.getItem('home-preloader-seen') !== 'true')
+
   const [preloaderIndex, setPreloaderIndex] = useState(0)
-  const [showPreloader, setShowPreloader] = useState(isHomePage)
+  const [showPreloader, setShowPreloader] = useState(shouldShowPreloaderOnHome)
   const [isPreloaderExiting, setIsPreloaderExiting] = useState(false)
 
   useEffect(() => {
@@ -585,6 +593,7 @@ export default function App() {
       }
 
       if (isLastMessage) {
+        sessionStorage.setItem('home-preloader-seen', 'true')
         setShowPreloader(false)
         return
       }
