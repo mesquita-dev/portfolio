@@ -93,7 +93,7 @@ const preloaderMessages = [
   'Product Designer',
   'Sometimes write code',
   'Brazilian',
-  "Let's check out my work",
+  "Let's check my work",
 ]
 
 const PRELOADER_HOLD_MS = 1200
