@@ -108,19 +108,19 @@ function AdmentumPage() {
             </header>
 
             <div className="space-y-2 mb-12">
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 Admentum was born from a real pain point: finding and hiring a trustworthy lawyer in Brazil is still a confusing, informal process — heavily reliant on personal referrals and WhatsApp conversations.
               </p>
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 After benchmarking competitors and conducting user interviews, it became clear the market lacked a direct, transparent, and digital solution to connect people with qualified lawyers. That insight pushed me to take the entrepreneurial leap.
               </p>
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 Drawing from my experience with digital products, I knew that building without a solid visual foundation would be costly down the road. Before designing a single product screen, I built Hades — a Design System from scratch using React, Tailwind, and Storybook. I defined primitive tokens, components, and variants to ensure consistency and speed throughout development.
               </p>
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 I invited a friend to co-found the company, and together we started building. I took the lead as a Design Engineer — designing interfaces in Figma and coding the front-end myself using React, Tailwind, TypeScript, and Motion. This overlap between design and engineering gave me full ownership over the final user experience.
               </p>
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 Admentum is currently in the validation phase. We're testing with early users, gathering feedback, and iterating quickly.
               </p>
             </div>
@@ -363,16 +363,16 @@ function GeneticaMaisPage() {
             </header>
 
             <div className="mb-12 space-y-2">
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 Genética Mais was born from my first professional experience at ABS, the world's largest livestock company, where I worked in the bovine semen and embryo storage department. There, I noticed the sector was extremely outdated and technology-poor — and I saw an opportunity.
               </p>
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 The idea was an e-commerce platform where genetics producers could list bovine semen and embryos, and buyers could select the desired quantity and have it delivered directly to their farm — simple, direct, and digital.
               </p>
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 To validate the concept, I attended livestock events where I conducted field research, presented an interactive prototype, and spoke with genetics producers, buyers, veterinarians, and genetics center employees. The results were encouraging — most people found the idea relevant and said they would use the product.
               </p>
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 However, an unavoidable contractual barrier emerged: genetics centers require that all commercialization be handled exclusively through their sales representatives, which made the business model unviable. The project never moved into development.
               </p>
               <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
@@ -598,19 +598,19 @@ export default function App() {
             </header>
 
             <div className="space-y-2 mb-12">
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 Product Designer with 3+ years of experience building digital products from the ground up — often as the only designer on the team, which taught me to move quickly, make decisions, and collaborate closely with engineers and stakeholders.
               </p>
 
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 As the founding designer at Granto Seguros, one of Brazil's emerging insurtech startups, I led the creation of their design system, drove alignment with stakeholders, and embedded user research into the product culture from day one.
               </p>
 
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 Beyond my design work, I'm also the co-founder of a legaltech startup, where I wear two hats as both founder and design engineer.
               </p>
 
-              <p className="text-sm leading-[140%] tracking-[-1%] text-[#757575]">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
                 I believe great design isn't just about aesthetics — it's about making complex experiences feel simple for real people.
               </p>
             </div>
