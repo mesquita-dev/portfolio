@@ -701,7 +701,9 @@ export default function App() {
                 </a>
                 <a
                   className="text-sm leading-[140%] tracking-[-1%] text-black underline-offset-4 transition-opacity hover:opacity-70 hover:underline"
-                  href="/resume.pdf"
+                  href="https://drive.google.com/file/d/1qzg4804lw7_M9N-lGKdqeeS1_4IDRrk0/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   CV
                 </a>
