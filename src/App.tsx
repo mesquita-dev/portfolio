@@ -114,7 +114,7 @@ function AdmentumPage() {
     <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
       <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
-          <div className="scrollbar-none flex flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
+          <div className="flex flex-col overflow-visible md:min-h-0">
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Admentum
@@ -200,7 +200,7 @@ function AdmentumPage() {
             </section>
           </div>
 
-          <aside className="scrollbar-none overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
+          <aside className="overflow-y-scroll overflow-x-hidden md:min-h-0 md:overscroll-y-contain">
             <div className="flex flex-col gap-4">
               <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
                 <div className="flex h-full w-full items-center justify-center p-0">
@@ -369,7 +369,7 @@ function GeneticaMaisPage() {
     <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
       <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
-          <div className="scrollbar-none flex flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
+          <div className="flex flex-col overflow-visible md:min-h-0">
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Genetica Mais
@@ -437,7 +437,7 @@ function GeneticaMaisPage() {
             </section>
           </div>
 
-          <aside className="scrollbar-none overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
+          <aside className="overflow-y-scroll overflow-x-hidden md:min-h-0 md:overscroll-y-contain">
             <div className="flex flex-col gap-4">
               <figure className="h-[clamp(260px,40vw,560px)] w-full rounded-md bg-[#f2f2f2]">
                 <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
@@ -683,7 +683,7 @@ export default function App() {
       <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
           {/* 30% — conteúdo (scroll interno, barra oculta) */}
-          <div className="scrollbar-none flex flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
+          <div className="flex flex-col overflow-visible md:min-h-0">
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Lucas Mesquita
@@ -803,7 +803,7 @@ export default function App() {
           </div>
 
           {/* 70% — imagens (scroll interno, barra oculta) */}
-          <aside className="scrollbar-none overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
+          <aside className="overflow-y-scroll overflow-x-hidden md:min-h-0 md:overscroll-y-contain">
             <div className="flex flex-col gap-6">
               {publishedProjects.map((p) => (
                 <a
