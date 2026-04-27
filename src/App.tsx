@@ -64,6 +64,8 @@ function StudyBlock({
 type PublishedProject = {
   id: string
   label: string
+  title: string
+  subtitle: string
   src: string
   mediaType: 'image' | 'video'
   usePadding: boolean
@@ -74,6 +76,8 @@ const publishedProjects: PublishedProject[] = [
   {
     id: 'admentum',
     label: 'Admentum',
+    title: 'Admentum',
+    subtitle: 'Legaltech to connect people with qualified lawyers. For lawyers, this platform can be used to manage their meetings.',
     src: '/admentum/AdvHome.jpg',
     mediaType: 'image',
     usePadding: true,
@@ -82,6 +86,8 @@ const publishedProjects: PublishedProject[] = [
   {
     id: 'genetica',
     label: 'Genetica',
+    title: 'Genetica Mais',
+    subtitle: 'E-commerce to sell and buy bovine genetic in Brazil',
     src: '/genetica/geneticavideo2.mp4',
     mediaType: 'video',
     usePadding: true,
@@ -568,16 +574,16 @@ export default function App() {
     const pathname = window.location.pathname
 
     if (pathname === '/admentum') {
-      document.title = 'Admentum'
+      document.title = 'Lucas Mesquita — Designer'
       return
     }
 
     if (pathname === '/genetica-mais') {
-      document.title = 'Genetica Mais'
+      document.title = 'Lucas Mesquita — Designer'
       return
     }
 
-    document.title = 'Lucas Mesquita | Product Designer'
+    document.title = 'Lucas Mesquita — Designer'
   }, [])
 
   useEffect(() => {
@@ -798,27 +804,35 @@ export default function App() {
 
           {/* 70% — imagens (scroll interno, barra oculta) */}
           <aside className="scrollbar-none overflow-visible md:min-h-0 md:overflow-y-auto md:overscroll-y-contain">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-6">
               {publishedProjects.map((p) => (
-                <figure
+                <a
                   key={p.id}
-                  className={`w-full bg-[#f2f2f2] rounded-md ${
-                    p.mediaType === 'video'
-                      ? 'h-[clamp(260px,40vw,560px)]'
-                      : 'aspect-696/515 max-md:min-h-[240px]'
-                  }`}
+                  href={p.href}
+                  className="block space-y-2"
+                  aria-label={`Abrir ${p.label}`}
                 >
-                  <div
-                    className={`flex h-full w-full items-center justify-center ${
-                      p.usePadding ? 'p-4 md:p-16' : 'p-0'
+                  <div className="flex flex-col">
+                    <p className="text-sm leading-5 tracking-[-1%] text-black">
+                      {p.title}
+                    </p>
+                    <p className="text-xs leading-[18px] tracking-[-1%] text-[#757575]">
+                      {p.subtitle}
+                    </p>
+                  </div>
+                  <figure
+                    className={`w-full rounded-md bg-[#f2f2f2] ${
+                      p.mediaType === 'video'
+                        ? 'h-[clamp(260px,40vw,560px)]'
+                        : 'aspect-696/515 max-md:min-h-[240px]'
                     }`}
                   >
-                    {p.href ? (
-                      <a
-                        href={p.href}
-                        className="block h-full w-full overflow-hidden rounded-lg"
-                        aria-label={`Abrir ${p.label}`}
-                      >
+                    <div
+                      className={`flex h-full w-full items-center justify-center ${
+                        p.usePadding ? 'p-4 md:p-16' : 'p-0'
+                      }`}
+                    >
+                      <div className="h-full w-full overflow-hidden rounded-lg">
                         {p.mediaType === 'video' ? (
                           <video
                             className="h-full w-full object-contain"
@@ -839,26 +853,11 @@ export default function App() {
                             className="h-full w-full object-contain"
                           />
                         )}
-                      </a>
-                    ) : (
-                      <div className="h-full w-full overflow-hidden rounded-lg">
-                        <video
-                          className="h-full w-full object-contain"
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          preload="auto"
-                          aria-label={p.label}
-                        >
-                          <source src={p.src} type="video/mp4" />
-                          Seu navegador nao suporta video HTML5.
-                        </video>
                       </div>
-                    )}
-                  </div>
-                  <figcaption className="sr-only">{p.label}</figcaption>
-                </figure>
+                    </div>
+                    <figcaption className="sr-only">{p.label}</figcaption>
+                  </figure>
+                </a>
               ))}
             </div>
           </aside>
