@@ -1,5 +1,27 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
+
+function scrollProjectPageToTop(
+  leftEl: HTMLElement | null,
+  asideEl: HTMLElement | null,
+) {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+  leftEl?.scrollTo({ top: 0, behavior: 'smooth' })
+  asideEl?.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+function ProjectBackToTopButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="fixed bottom-5 right-5 z-20 rounded border border-[#e5e5e5] bg-white/90 px-3 py-2 font-mono text-xs font-normal leading-[18px] tracking-[-0.42px] text-[#757575] shadow-sm backdrop-blur-sm transition-colors hover:border-black/20 hover:text-black md:bottom-6 md:right-6"
+      aria-label="Back to top"
+    >
+      Back to top
+    </button>
+  )
+}
 
 function SectionLabel({
   children,
@@ -110,11 +132,17 @@ const preloaderExitAnimation =
   'preloader-roll-up-exit 520ms cubic-bezier(0.22, 1, 0.36, 1)'
 
 function AdmentumPage() {
+  const leftScrollRef = useRef<HTMLDivElement>(null)
+  const asideScrollRef = useRef<HTMLElement>(null)
+
   return (
     <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
       <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
-          <div className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none">
+          <div
+            ref={leftScrollRef}
+            className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none"
+          >
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Admentum
@@ -200,7 +228,10 @@ function AdmentumPage() {
             </section>
           </div>
 
-          <aside className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none">
+          <aside
+            ref={asideScrollRef}
+            className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none"
+          >
             <div className="flex flex-col gap-4">
               <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
                 <div className="flex h-full w-full items-center justify-center p-0">
@@ -360,16 +391,27 @@ function AdmentumPage() {
           </aside>
         </div>
       </div>
+      <ProjectBackToTopButton
+        onClick={() =>
+          scrollProjectPageToTop(leftScrollRef.current, asideScrollRef.current)
+        }
+      />
     </div>
   )
 }
 
 function GeneticaMaisPage() {
+  const leftScrollRef = useRef<HTMLDivElement>(null)
+  const asideScrollRef = useRef<HTMLElement>(null)
+
   return (
     <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
       <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
-          <div className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none">
+          <div
+            ref={leftScrollRef}
+            className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none"
+          >
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Genetica Mais
@@ -437,7 +479,10 @@ function GeneticaMaisPage() {
             </section>
           </div>
 
-          <aside className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none">
+          <aside
+            ref={asideScrollRef}
+            className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none"
+          >
             <div className="flex flex-col gap-4">
               <figure className="h-[clamp(260px,40vw,560px)] w-full rounded-md bg-[#f2f2f2]">
                 <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
@@ -552,6 +597,11 @@ function GeneticaMaisPage() {
           </aside>
         </div>
       </div>
+      <ProjectBackToTopButton
+        onClick={() =>
+          scrollProjectPageToTop(leftScrollRef.current, asideScrollRef.current)
+        }
+      />
     </div>
   )
 }
