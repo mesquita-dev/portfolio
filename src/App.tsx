@@ -27,7 +27,7 @@ function ExperienceBlock({
   period: string
 }) {
   return (
-    <div className="space-y-[2px]">
+    <div>
       <h2 className="font-sans text-sm leading-5 tracking-[-1%] text-black">
         {title}
       </h2>
@@ -49,7 +49,7 @@ function StudyBlock({
   period: string
 }) {
   return (
-    <div className="space-y-[2px]">
+    <div>
       <h2 className="font-sans text-sm leading-5 tracking-[-1%] text-black">
         {title}
       </h2>
@@ -114,7 +114,7 @@ function AdmentumPage() {
     <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
       <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
-          <div className="flex flex-col overflow-visible md:min-h-0">
+          <div className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none">
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Admentum
@@ -369,7 +369,7 @@ function GeneticaMaisPage() {
     <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
       <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
-          <div className="flex flex-col overflow-visible md:min-h-0">
+          <div className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none">
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Genetica Mais
@@ -683,7 +683,7 @@ export default function App() {
       <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
           {/* 30% — conteúdo (scroll interno, barra oculta) */}
-          <div className="flex flex-col overflow-visible md:min-h-0">
+          <div className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none">
             <header className="mb-20 flex items-center justify-between gap-4">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Lucas Mesquita
@@ -718,19 +718,11 @@ export default function App() {
 
             <div className="space-y-2 mb-12">
               <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
-                Product Designer with 3+ years of experience building digital products from the ground up — often as the only designer on the team, which taught me to move quickly, make decisions, and collaborate closely with engineers and stakeholders.
-              </p>
-
-              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
-                As the founding designer at Granto Seguros, one of Brazil's emerging insurtech startups, I led the creation of their design system, drove alignment with stakeholders, and embedded user research into the product culture from day one.
-              </p>
-
-              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
-                Beyond my design work, I'm also the co-founder of a legaltech startup, where I wear two hats as both founder and design engineer.
-              </p>
-
-              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
-                I believe great design isn't just about aesthetics — it's about making complex experiences feel simple for real people.
+                Product Designer <span className="italic">(future Design Engineer)</span>{' '}
+                seeking to understand how I bring value to the business and the customer.
+                Throughout my journey, I've gained clarity on the importance of
+                conversation, whether with users, designers, stakeholders, or engineers.
+                It's through this that I can create a product that changes people's lives.
               </p>
             </div>
 
@@ -756,6 +748,37 @@ export default function App() {
                     org="Granto Seguros"
                     period="2022 — 2023"
                   />
+                </div>
+              </div>
+            </section>
+
+            <section className="mb-12" aria-labelledby="awards-heading">
+              <h2 id="awards-heading" className="sr-only">
+                Awards
+              </h2>
+              <SectionLabel className="mb-2">Awards</SectionLabel>
+              <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+                <div>
+                  <h2 className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                    Winner Hackathon
+                  </h2>
+                  <p className="font-sans text-xs leading-[18px] text-[#757575]">
+                    Resend + Replit
+                  </p>
+                  <p className="font-sans text-xs leading-[18px] text-[#757575]">
+                    2026
+                  </p>
+                </div>
+                <div>
+                  <h2 className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                    Winner Hackathon
+                  </h2>
+                  <p className="font-sans text-xs leading-[18px] text-[#757575]">
+                    UBYFOL
+                  </p>
+                  <p className="font-sans text-xs leading-[18px] text-[#757575]">
+                    2023
+                  </p>
                 </div>
               </div>
             </section>
