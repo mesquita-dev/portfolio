@@ -46,7 +46,7 @@ body {
   }
 }
 
-/* Scroll invisível (Firefox / WebKit); o scroll por roda/toque/teclado continua */
+/* Scroll invisível (Firefox / WebKit); a rolagem por roda/toque/teclado continua */
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;

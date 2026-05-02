@@ -200,7 +200,7 @@ function AdmentumPage() {
             </section>
           </div>
 
-          <aside className="overflow-y-scroll overflow-x-hidden md:min-h-0 md:overscroll-y-contain">
+          <aside className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none">
             <div className="flex flex-col gap-4">
               <figure className="aspect-696/515 w-full bg-[#f2f2f2] max-md:min-h-[240px]">
                 <div className="flex h-full w-full items-center justify-center p-0">
@@ -437,7 +437,7 @@ function GeneticaMaisPage() {
             </section>
           </div>
 
-          <aside className="overflow-y-scroll overflow-x-hidden md:min-h-0 md:overscroll-y-contain">
+          <aside className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none">
             <div className="flex flex-col gap-4">
               <figure className="h-[clamp(260px,40vw,560px)] w-full rounded-md bg-[#f2f2f2]">
                 <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
@@ -826,7 +826,7 @@ export default function App() {
           </div>
 
           {/* 70% — imagens (scroll interno, barra oculta) */}
-          <aside className="overflow-y-scroll overflow-x-hidden md:min-h-0 md:overscroll-y-contain">
+          <aside className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none">
             <div className="flex flex-col gap-6">
               {publishedProjects.map((p) => (
                 <a
