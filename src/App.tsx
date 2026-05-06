@@ -734,7 +734,8 @@ export default function App() {
         <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
           {/* 30% — conteúdo (scroll interno, barra oculta) */}
           <div className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none">
-            <header className="mb-20 flex items-center justify-between gap-4">
+            <div className="flex flex-col mb-20">
+            <header className="flex items-center justify-between gap-1">
               <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
                 Lucas Mesquita
               </h1>
@@ -757,7 +758,7 @@ export default function App() {
                 </a>
                 <a
                   className="text-sm leading-[140%] tracking-[-1%] text-black underline-offset-4 transition-opacity hover:opacity-70 hover:underline"
-                  href="https://drive.google.com/file/d/1qzg4804lw7_M9N-lGKdqeeS1_4IDRrk0/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1AdXMVQ2_PYs5CKkdogCMS-zm19XZqS9g/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -765,6 +766,16 @@ export default function App() {
                 </a>
               </div>
             </header>
+
+            <div>
+              <a
+                href="mailto:lmesquita2k@gmail.com?subject=Estou%20vindo%20pelo%20seu%20portf%C3%B3lio"
+                className="text-xs leading-[150%] tracking-[-1%] text-[#757575]"
+              >
+                lmesquita2k@gmail.com
+              </a>
+            </div>
+          </div>
 
             <div className="space-y-2 mb-12">
               <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
