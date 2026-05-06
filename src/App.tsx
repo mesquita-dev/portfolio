@@ -767,10 +767,10 @@ export default function App() {
               </div>
             </header>
 
-            <div>
+            <div className="h-5">
               <a
                 href="mailto:lmesquita2k@gmail.com?subject=Estou%20vindo%20pelo%20seu%20portf%C3%B3lio"
-                className="text-xs leading-[150%] tracking-[-1%] text-[#757575]"
+                className="block h-5 text-xs leading-5 tracking-[-1%] text-[#757575]"
               >
                 lmesquita2k@gmail.com
               </a>
