@@ -119,8 +119,8 @@ const publishedProjects: PublishedProject[] = [
 
 const preloaderMessages = [
   'Welcome to my portfolio',
-  'Product Designer',
-  'Sometimes write code',
+  "I'm a Product Designer",
+  'And sometimes I write code',
 ]
 
 const PRELOADER_HOLD_MS = 1200
