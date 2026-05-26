@@ -92,6 +92,7 @@ type PublishedProject = {
   mediaType: 'image' | 'video'
   usePadding: boolean
   href?: string
+  comingSoon?: boolean
 }
 
 const publishedProjects: PublishedProject[] = [
@@ -115,7 +116,20 @@ const publishedProjects: PublishedProject[] = [
     usePadding: true,
     href: '/genetica-mais',
   },
+  {
+    id: 'granto-one',
+    label: 'Granto One',
+    title: 'Granto One',
+    subtitle: 'Writing the next case study',
+    src: '',
+    mediaType: 'image',
+    usePadding: true,
+    href: '/granto-one',
+    comingSoon: true,
+  },
 ]
+
+const homeProjectFigureHeightClass = 'h-[clamp(280px,42vw,640px)]'
 
 const preloaderMessages = [
   'Welcome to my portfolio',
@@ -129,6 +143,18 @@ const preloaderEnterAnimation =
   'preloader-roll-up-enter 520ms cubic-bezier(0.22, 1, 0.36, 1)'
 const preloaderExitAnimation =
   'preloader-roll-up-exit 520ms cubic-bezier(0.22, 1, 0.36, 1)'
+
+function CaseStudySoonMedia({ className = '' }: { className?: string }) {
+  return (
+    <div
+      className={`flex h-full w-full items-center justify-center ${className}`.trim()}
+    >
+      <p className="text-center text-sm leading-5 tracking-[-1%] text-[#757575]">
+        Case study soon
+      </p>
+    </div>
+  )
+}
 
 function AdmentumPage() {
   const leftScrollRef = useRef<HTMLDivElement>(null)
@@ -605,6 +631,95 @@ function GeneticaMaisPage() {
   )
 }
 
+function GrantoOnePage() {
+  const leftScrollRef = useRef<HTMLDivElement>(null)
+  const asideScrollRef = useRef<HTMLElement>(null)
+
+  return (
+    <div className="flex min-h-screen flex-col bg-white font-sans text-black md:h-full md:min-h-0 md:overflow-hidden">
+      <div className="flex w-full flex-col p-3 md:min-h-0 md:flex-1">
+        <div className="grid grid-cols-1 gap-16 md:min-h-0 md:flex-1 md:grid-cols-[30%_70%] md:grid-rows-1 md:gap-6 md:overflow-hidden">
+          <div
+            ref={leftScrollRef}
+            className="flex min-h-0 flex-col overflow-visible md:min-h-0 md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain scrollbar-none"
+          >
+            <header className="mb-20 flex items-center justify-between gap-4">
+              <h1 className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%]">
+                Granto One
+              </h1>
+              <a
+                href="/"
+                className="text-sm leading-[140%] tracking-[-1%] text-[#757575] underline-offset-4 transition-opacity hover:text-black hover:opacity-70 hover:underline"
+              >
+                Back
+              </a>
+            </header>
+
+            <div className="mb-12 space-y-2">
+              <p className="text-sm leading-[150%] tracking-[-1%] text-[#757575]">
+                Writing the next case study.
+              </p>
+            </div>
+
+            <section className="mb-12">
+              <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-4">
+                <div>
+                  <SectionLabel className="mb-2">Role</SectionLabel>
+                  <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                    Product Designer
+                  </p>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Team</SectionLabel>
+                  <div className="flex flex-col gap-[4px]">
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Myself
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Stacks</SectionLabel>
+                  <div className="flex flex-row flex-wrap gap-2 md:flex-col md:gap-[4px]">
+                    <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                      Figma
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <SectionLabel className="mb-2">Duration</SectionLabel>
+                  <p className="font-sans text-sm leading-5 tracking-[-1%] text-black">
+                    2026 — Ongoing
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside
+            ref={asideScrollRef}
+            className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none"
+          >
+            <div className="flex flex-col gap-4">
+              <figure
+                className={`w-full rounded-md bg-[#f2f2f2] ${homeProjectFigureHeightClass}`}
+              >
+                <div className="flex h-full w-full items-center justify-center p-4 md:p-16">
+                  <CaseStudySoonMedia />
+                </div>
+              </figure>
+            </div>
+          </aside>
+        </div>
+      </div>
+      <ProjectBackToTopButton
+        onClick={() =>
+          scrollProjectPageToTop(leftScrollRef.current, asideScrollRef.current)
+        }
+      />
+    </div>
+  )
+}
+
 export default function App() {
   const isHomePage = window.location.pathname === '/'
   const navigationEntry = performance.getEntriesByType(
@@ -628,6 +743,11 @@ export default function App() {
     }
 
     if (pathname === '/genetica-mais') {
+      document.title = 'Lucas Mesquita — Designer'
+      return
+    }
+
+    if (pathname === '/granto-one') {
       document.title = 'Lucas Mesquita — Designer'
       return
     }
@@ -680,6 +800,10 @@ export default function App() {
 
   if (window.location.pathname === '/genetica-mais') {
     return <GeneticaMaisPage />
+  }
+
+  if (window.location.pathname === '/granto-one') {
+    return <GrantoOnePage />
   }
 
   if (showPreloader) {
@@ -888,60 +1012,84 @@ export default function App() {
           {/* 70% — imagens (scroll interno, barra oculta) */}
           <aside className="min-h-0 overflow-y-auto overflow-x-hidden md:min-h-0 md:h-full md:overscroll-y-contain scrollbar-none">
             <div className="flex flex-col gap-6">
-              {publishedProjects.map((p) => (
-                <a
-                  key={p.id}
-                  href={p.href}
-                  className="block space-y-2"
-                  aria-label={`Abrir ${p.label}`}
-                >
-                  <div className="flex flex-col">
-                    <p className="text-sm leading-5 tracking-[-1%] text-black">
-                      {p.title}
-                    </p>
-                    <p className="text-xs leading-[18px] tracking-[-1%] text-[#757575]">
-                      {p.subtitle}
-                    </p>
-                  </div>
-                  <figure
-                    className={`w-full rounded-md bg-[#f2f2f2] ${
-                      p.mediaType === 'video'
-                        ? 'h-[clamp(260px,40vw,560px)]'
-                        : 'aspect-696/515 max-md:min-h-[240px]'
-                    }`}
-                  >
-                    <div
-                      className={`flex h-full w-full items-center justify-center ${
-                        p.usePadding ? 'p-4 md:p-16' : 'p-0'
+              {publishedProjects.map((p) => {
+                const card = (
+                  <>
+                    <div className="flex flex-col">
+                      <p
+                        className={`text-sm leading-5 tracking-[-1%] ${
+                          p.comingSoon ? 'text-[#757575]' : 'text-black'
+                        }`}
+                      >
+                        {p.title}
+                      </p>
+                      <p className="text-xs leading-[18px] tracking-[-1%] text-[#757575]">
+                        {p.subtitle}
+                      </p>
+                    </div>
+                    <figure
+                      className={`w-full rounded-md ${homeProjectFigureHeightClass} ${
+                        p.id === 'admentum' ? 'bg-[#131313]' : 'bg-[#f2f2f2]'
                       }`}
                     >
-                      <div className="h-full w-full overflow-hidden rounded-lg">
-                        {p.mediaType === 'video' ? (
-                          <video
-                            className="h-full w-full object-contain"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="auto"
-                            aria-label={p.label}
-                          >
-                            <source src={p.src} type="video/mp4" />
-                            Seu navegador nao suporta video HTML5.
-                          </video>
-                        ) : (
-                          <img
-                            src={p.src}
-                            alt={p.label}
-                            className="h-full w-full object-contain"
-                          />
-                        )}
+                      <div
+                        className={`flex h-full w-full items-center justify-center ${
+                          p.usePadding ? 'p-4 md:p-16' : 'p-0'
+                        }`}
+                      >
+                        <div className="h-full w-full overflow-hidden rounded-lg">
+                          {p.comingSoon ? (
+                            <CaseStudySoonMedia />
+                          ) : p.mediaType === 'video' ? (
+                            <video
+                              className="h-full w-full object-contain"
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              preload="auto"
+                              aria-label={p.label}
+                            >
+                              <source src={p.src} type="video/mp4" />
+                              Seu navegador nao suporta video HTML5.
+                            </video>
+                          ) : (
+                            <img
+                              src={p.src}
+                              alt={p.label}
+                              className="h-full w-full object-contain"
+                            />
+                          )}
+                        </div>
                       </div>
+                      <figcaption className="sr-only">{p.label}</figcaption>
+                    </figure>
+                  </>
+                )
+
+                if (p.comingSoon) {
+                  return (
+                    <div
+                      key={p.id}
+                      className="block cursor-default space-y-2"
+                      aria-disabled="true"
+                    >
+                      {card}
                     </div>
-                    <figcaption className="sr-only">{p.label}</figcaption>
-                  </figure>
-                </a>
-              ))}
+                  )
+                }
+
+                return (
+                  <a
+                    key={p.id}
+                    href={p.href}
+                    className="block space-y-2"
+                    aria-label={`Abrir ${p.label}`}
+                  >
+                    {card}
+                  </a>
+                )
+              })}
             </div>
           </aside>
         </div>
