@@ -71,29 +71,11 @@ function getBrasiliaClock() {
   return { time, dateTime: `${dateTime}-03:00` }
 }
 
-function AnimatedNameLink() {
+function AnimatedContactLabel() {
   return (
-    <h1 className="m-0">
-      <a
-        href="/about"
-        className="group inline-block h-5 overflow-hidden leading-5"
-        aria-label="Lucas Mesquita — About me"
-      >
-        <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-5">
-          <span className="block h-5">Lucas Mesquita</span>
-          <span className="block h-5">About me</span>
-        </span>
-      </a>
-    </h1>
-  )
-}
-
-function AnimatedContactLink() {
-  return (
-    <a
-      href="#contact"
-      className="group m-0 block h-[0.85em] w-full overflow-hidden text-9xl leading-[0.85]"
-      aria-label="Contact — In the left side"
+    <span
+      className="group m-0 block h-[0.85em] w-full cursor-default overflow-hidden text-9xl leading-[0.85]"
+      aria-label="Contact — Look left"
     >
       <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
         <span className="block whitespace-nowrap leading-[0.85]">Contact</span>
@@ -101,12 +83,18 @@ function AnimatedContactLink() {
           Look left
         </span>
       </span>
-    </a>
+    </span>
   )
 }
 
+const previewImageClassName =
+  'block aspect-[2/3] w-full object-contain object-center'
+
 export default function TestePage() {
   const [brasiliaClock, setBrasiliaClock] = useState(getBrasiliaClock)
+  const [previewImage, setPreviewImage] = useState<'work' | 'about' | null>(
+    null,
+  )
 
   useEffect(() => {
     const fontLink = document.createElement('link')
@@ -136,22 +124,25 @@ export default function TestePage() {
   return (
     <div
       id="teste-canvas"
-      className="mx-auto grid min-h-dvh w-full max-w-[1240px] grid-cols-4 grid-rows-[auto_1fr] py-4 font-aileron text-sm"
+      className="mx-auto grid min-h-dvh w-full max-w-7xl grid-cols-4 grid-rows-[auto_1fr] py-4 font-aileron text-sm"
     >
-      <header className="col-span-4 grid grid-cols-4 items-center">
+      <header className="col-span-4 grid grid-cols-4 items-center gap-6">
         <p className="m-0 text-gray-400">
           <time dateTime={brasiliaClock.dateTime} className="tabular-nums">
             {brasiliaClock.time}
           </time>
+          {' '}— Brazil
         </p>
         <div className="col-span-2 col-start-3 flex items-center justify-between">
-          <AnimatedNameLink />
+          <h1 className="m-0">
+            <a href="/teste">Lucas Mesquita</a>
+          </h1>
           <p className="m-0 text-gray-400">designer</p>
         </div>
       </header>
 
-      <main className="col-span-4 row-start-2 grid h-full grid-cols-4 items-end">
-        <div className="col-span-2 flex flex-col gap-1 text-xs text-gray-400">
+      <main className="col-span-4 row-start-2 grid h-full grid-cols-4 items-end gap-6">
+        <div className="col-span-1 flex flex-col gap-1 self-end text-xs text-gray-400">
           <a
             href="https://www.linkedin.com/in/lucas-msqt/"
             target="_blank"
@@ -182,23 +173,48 @@ export default function TestePage() {
           </a>
         </div>
 
+        <div
+          className={`col-start-2 col-span-1 w-full min-w-0 self-end transition-opacity duration-300 ${
+            previewImage ? 'opacity-100' : 'pointer-events-none opacity-0'
+          }`}
+        >
+          {previewImage === 'work' ? (
+            <img
+              src="/works.jpg"
+              alt="Work preview"
+              className={previewImageClassName}
+            />
+          ) : null}
+          {previewImage === 'about' ? (
+            <img
+              src="/me.png"
+              alt="Lucas Mesquita"
+              className={previewImageClassName}
+            />
+          ) : null}
+        </div>
+
         <nav
           aria-label="Main"
-          className="col-span-2 col-start-3 flex min-w-0 flex-col overflow-hidden font-bebas-neue"
+          className="col-span-2 col-start-3 flex min-w-0 flex-col self-end overflow-hidden font-bebas-neue"
         >
           <a
             href="/teste"
+            onMouseEnter={() => setPreviewImage('work')}
+            onMouseLeave={() => setPreviewImage(null)}
             className="m-0 block w-full whitespace-nowrap text-9xl leading-[0.85] transition-colors hover:text-[#EC3406]"
           >
             Work
           </a>
           <a
             href="/about"
+            onMouseEnter={() => setPreviewImage('about')}
+            onMouseLeave={() => setPreviewImage(null)}
             className="m-0 block w-full whitespace-nowrap text-9xl leading-[0.85] transition-colors hover:text-[#EC3406]"
           >
             About
           </a>
-          <AnimatedContactLink />
+          <AnimatedContactLabel />
         </nav>
       </main>
     </div>

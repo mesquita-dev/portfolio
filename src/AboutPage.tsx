@@ -45,7 +45,7 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <div className="mx-auto grid w-full max-w-[1240px] grid-cols-4 py-2 font-aileron text-sm">
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-4 py-2 font-aileron text-sm">
       <a href="/teste" className="col-span-4 m-0 text-gray-400">
         Back
       </a>
