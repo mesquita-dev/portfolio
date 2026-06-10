@@ -88,36 +88,6 @@ function AnimatedNameLink() {
   )
 }
 
-function AnimatedHoverLink({
-  href,
-  label,
-  hoverLabel,
-  external = false,
-}: {
-  href: string
-  label: string
-  hoverLabel: string
-  external?: boolean
-}) {
-  const externalProps = external
-    ? { target: '_blank' as const, rel: 'noreferrer' }
-    : {}
-
-  return (
-    <a
-      href={href}
-      {...externalProps}
-      className="group m-0 inline-block h-4 overflow-hidden leading-4"
-      aria-label={`${label} — ${hoverLabel}`}
-    >
-      <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
-        <span className="block h-4 whitespace-nowrap leading-4">{label}</span>
-        <span className="block h-4 whitespace-nowrap leading-4">{hoverLabel}</span>
-      </span>
-    </a>
-  )
-}
-
 function AnimatedContactLink() {
   return (
     <a
@@ -182,28 +152,34 @@ export default function TestePage() {
 
       <main className="col-span-4 row-start-2 grid h-full grid-cols-4 items-end">
         <div className="col-span-2 flex flex-col gap-1 text-xs text-gray-400">
-          <AnimatedHoverLink
+          <a
             href="https://www.linkedin.com/in/lucas-msqt/"
-            label="/in/lucas-msqt/"
-            hoverLabel="LinkedIn"
-            external
-          />
-          <AnimatedHoverLink
+            target="_blank"
+            rel="noreferrer"
+            className="m-0 transition-colors hover:text-[#EC3406]"
+          >
+            /in/lucas-msqt/
+          </a>
+          <a
             href="https://github.com/mesquita-dev"
-            label="@mesquita-dev"
-            hoverLabel="Github"
-            external
-          />
-          <AnimatedHoverLink
+            target="_blank"
+            rel="noreferrer"
+            className="m-0 transition-colors hover:text-[#EC3406]"
+          >
+            @mesquita-dev
+          </a>
+          <a
             href="mailto:lmesquita2k@gmail.com?subject=Estou%20vindo%20pelo%20seu%20portf%C3%B3lio"
-            label="lmesquita2k@gmail.com"
-            hoverLabel="email"
-          />
-          <AnimatedHoverLink
+            className="m-0 transition-colors hover:text-[#EC3406]"
+          >
+            lmesquita2k@gmail.com
+          </a>
+          <a
             href="tel:+5534991456285"
-            label="+55 (34) 99145-6285"
-            hoverLabel="telefone"
-          />
+            className="m-0 transition-colors hover:text-[#EC3406]"
+          >
+            +55 (34) 99145-6285
+          </a>
         </div>
 
         <nav
