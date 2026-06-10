@@ -4,6 +4,8 @@
 @theme {
   --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --font-aileron: "Aileron", ui-sans-serif, sans-serif;
+  --font-bebas-neue: "Bebas Neue", ui-sans-serif, sans-serif;
 }
 
 html {

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
+import AboutPage from './AboutPage.tsx'
+import TestePage from './TestePage.tsx'
 
 function scrollProjectPageToTop(
   leftEl: HTMLElement | null,
@@ -793,6 +795,14 @@ export default function App() {
 
     setIsPreloaderExiting(false)
   }, [preloaderIndex, showPreloader])
+
+  if (window.location.pathname === '/teste') {
+    return <TestePage />
+  }
+
+  if (window.location.pathname === '/about') {
+    return <AboutPage />
+  }
 
   if (window.location.pathname === '/admentum') {
     return <AdmentumPage />
