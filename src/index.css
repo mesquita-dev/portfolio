@@ -48,6 +48,67 @@ body {
   }
 }
 
+/* /about — scroll no documento, barra visível */
+html.layout-about {
+  height: auto !important;
+  min-height: 100%;
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable;
+}
+
+html.layout-about body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  font-family: var(--font-aileron);
+}
+
+html.layout-about #root {
+  display: block;
+  height: auto !important;
+  min-height: 100dvh;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+html.layout-about::-webkit-scrollbar {
+  width: 10px;
+}
+
+html.layout-about::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+html.layout-about::-webkit-scrollbar-thumb {
+  background: #a3a3a3;
+  border-radius: 999px;
+}
+
+html.layout-about {
+  scrollbar-width: thin;
+  scrollbar-color: #a3a3a3 #f5f5f5;
+}
+
+/* /teste — home sem scroll */
+html.layout-teste,
+html.layout-teste body,
+html.layout-teste #root {
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  overflow: hidden !important;
+}
+
+html.layout-teste body {
+  font-family: var(--font-aileron);
+}
+
+html.layout-teste #root {
+  display: block;
+  min-height: 0 !important;
+}
+
 /* Scroll invisível (Firefox / WebKit); a rolagem por roda/toque/teclado continua */
 .scrollbar-none {
   -ms-overflow-style: none;

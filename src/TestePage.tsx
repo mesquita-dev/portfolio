@@ -4,45 +4,13 @@ import { useEffect, useState } from 'react'
  * Playground em /teste — edite este arquivo livremente.
  * Os estilos globais do portfolio são resetados enquanto esta rota está ativa.
  */
-const HTML_TESTE_CLASSES = [
-  'm-0',
-  'p-0',
-  'h-auto',
-  'overflow-visible',
-  'md:h-auto',
-  'md:overflow-visible',
-] as const
+const LAYOUT_TESTE_CLASS = 'layout-teste'
 
 const BEBAS_NEUE_FONT_URL =
   'https://api.fontshare.com/v2/css?f[]=bebas-neue@400&display=swap'
 
-const BODY_TESTE_CLASSES = [
-  ...HTML_TESTE_CLASSES,
-  'font-aileron',
-] as const
-
-const ROOT_TESTE_CLASSES = [
-  'm-0',
-  'p-0',
-  'block',
-  'h-auto',
-  'min-h-0',
-  'overflow-visible',
-  'md:h-auto',
-  'md:min-h-0',
-  'md:overflow-visible',
-] as const
-
-function toggleTesteLayoutClasses(active: boolean) {
-  const html = document.documentElement
-  const body = document.body
-  const root = document.getElementById('root')
-
-  const action = active ? 'add' : 'remove'
-
-  html.classList[action](...HTML_TESTE_CLASSES)
-  body.classList[action](...BODY_TESTE_CLASSES)
-  root?.classList[action](...ROOT_TESTE_CLASSES)
+function toggleTesteLayout(active: boolean) {
+  document.documentElement.classList.toggle(LAYOUT_TESTE_CLASS, active)
 }
 
 function getBrasiliaClock() {
@@ -102,11 +70,11 @@ export default function TestePage() {
     fontLink.href = BEBAS_NEUE_FONT_URL
     document.head.appendChild(fontLink)
 
-    toggleTesteLayoutClasses(true)
+    toggleTesteLayout(true)
 
     return () => {
       fontLink.remove()
-      toggleTesteLayoutClasses(false)
+      toggleTesteLayout(false)
     }
   }, [])
 
@@ -135,7 +103,12 @@ export default function TestePage() {
         </p>
         <div className="col-span-2 col-start-3 flex items-center justify-between">
           <h1 className="m-0">
-            <a href="/teste">Lucas Mesquita</a>
+            <a
+              href="/teste"
+              className="transition-colors hover:text-[#EC3406]"
+            >
+              Lucas Mesquita
+            </a>
           </h1>
           <p className="m-0 text-gray-400">designer</p>
         </div>
