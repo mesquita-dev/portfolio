@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 
 const LAYOUT_ABOUT_CLASS = 'layout-about'
 
+const BEBAS_NEUE_FONT_URL =
+  'https://api.fontshare.com/v2/css?f[]=bebas-neue@400&display=swap'
+
 const aboutImageClassName = 'block w-full h-auto'
 
 function toggleAboutLayout(active: boolean) {
@@ -38,9 +41,15 @@ export default function AboutPage() {
   const [brasiliaClock, setBrasiliaClock] = useState(getBrasiliaClock)
 
   useEffect(() => {
+    const fontLink = document.createElement('link')
+    fontLink.rel = 'stylesheet'
+    fontLink.href = BEBAS_NEUE_FONT_URL
+    document.head.appendChild(fontLink)
+
     toggleAboutLayout(true)
 
     return () => {
+      fontLink.remove()
       toggleAboutLayout(false)
     }
   }, [])
@@ -78,7 +87,10 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <main className="col-span-4 mt-32 grid grid-cols-4 gap-6 pb-16">
+      <main className="col-span-4 mt-32 flex flex-col gap-16 pb-16">
+        <h1 className="m-0 font-bebas-neue text-9xl leading-[0.85]">about</h1>
+
+        <div className="grid grid-cols-4 gap-6">
         <div className="col-span-1 flex w-full min-w-0 flex-col gap-16 self-start">
           <div className="flex flex-col gap-1">
             <img
@@ -282,6 +294,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </main>
     </div>

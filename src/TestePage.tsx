@@ -172,7 +172,7 @@ export default function TestePage() {
           className="col-span-2 col-start-3 flex min-w-0 flex-col self-end overflow-hidden font-bebas-neue"
         >
           <a
-            href="/teste"
+            href="/work"
             onMouseEnter={() => setPreviewImage('work')}
             onMouseLeave={() => setPreviewImage(null)}
             className="m-0 block w-full whitespace-nowrap text-9xl leading-[0.85] transition-colors hover:text-[#EC3406]"

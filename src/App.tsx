@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import AboutPage from './AboutPage.tsx'
 import TestePage from './TestePage.tsx'
+import WorkPage from './WorkPage.tsx'
 
 function scrollProjectPageToTop(
   leftEl: HTMLElement | null,
@@ -802,6 +803,10 @@ export default function App() {
 
   if (window.location.pathname === '/about') {
     return <AboutPage />
+  }
+
+  if (window.location.pathname === '/work') {
+    return <WorkPage />
   }
 
   if (window.location.pathname === '/admentum') {
