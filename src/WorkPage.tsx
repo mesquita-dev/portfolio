@@ -1,4 +1,5 @@
 import { useEffect, useState, type PointerEvent, type ReactNode } from 'react'
+import BackToHomeLink from './BackToHomeLink.tsx'
 
 const LAYOUT_ABOUT_CLASS = 'layout-about'
 
@@ -166,6 +167,9 @@ export default function WorkPage() {
           </time>
           {' '}— Brazil
         </p>
+        <div className="col-span-1 col-start-2">
+          <BackToHomeLink />
+        </div>
         <div className="col-span-2 col-start-3 flex items-center justify-between">
           <h1 className="m-0">
             <a
@@ -175,7 +179,14 @@ export default function WorkPage() {
               Lucas Mesquita
             </a>
           </h1>
-          <p className="m-0 text-gray-400">designer</p>
+          <a
+            href="https://drive.google.com/file/d/1AdXMVQ2_PYs5CKkdogCMS-zm19XZqS9g/view"
+            target="_blank"
+            rel="noreferrer"
+            className="m-0 text-gray-400 transition-colors hover:text-[#EC3406]"
+          >
+            Resume
+          </a>
         </div>
       </header>
 
@@ -184,7 +195,7 @@ export default function WorkPage() {
 
         <div className="grid grid-cols-4 items-stretch gap-x-6">
           <WorkCard
-            href="/genetica-mais"
+            href="/geneticaTeste"
             title="E-commerce app for bovine embryos"
             className="col-span-1 row-start-1"
           >

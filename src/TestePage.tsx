@@ -110,7 +110,14 @@ export default function TestePage() {
               Lucas Mesquita
             </a>
           </h1>
-          <p className="m-0 text-gray-400">designer</p>
+          <a
+            href="https://drive.google.com/file/d/1AdXMVQ2_PYs5CKkdogCMS-zm19XZqS9g/view"
+            target="_blank"
+            rel="noreferrer"
+            className="m-0 text-gray-400 transition-colors hover:text-[#EC3406]"
+          >
+            Resume
+          </a>
         </div>
       </header>
 
@@ -160,7 +167,7 @@ export default function TestePage() {
           ) : null}
           {previewImage === 'about' ? (
             <img
-              src="/me.png"
+              src="/about/me.png"
               alt="Lucas Mesquita"
               className={previewImageClassName}
             />

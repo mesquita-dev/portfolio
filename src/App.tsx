@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import AboutPage from './AboutPage.tsx'
+import GeneticaTestePage from './GeneticaTestePage.tsx'
 import TestePage from './TestePage.tsx'
 import WorkPage from './WorkPage.tsx'
 
@@ -807,6 +808,10 @@ export default function App() {
 
   if (window.location.pathname === '/work') {
     return <WorkPage />
+  }
+
+  if (window.location.pathname === '/geneticaTeste') {
+    return <GeneticaTestePage />
   }
 
   if (window.location.pathname === '/admentum') {
