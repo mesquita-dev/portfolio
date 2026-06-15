@@ -58,6 +58,12 @@ function AnimatedContactLabel() {
 const previewImageClassName =
   'block aspect-[2/3] w-full object-contain object-center'
 
+const geneticaBackgroundUrl =
+  'https://images.unsplash.com/photo-1569239591652-6cc3025b07fa?auto=format&fit=crop&q=85&w=1600'
+
+const geneticaPreviewPhoneClassName =
+  'block h-auto max-h-[90%] w-auto max-w-[75%] object-contain'
+
 export default function TestePage() {
   const [brasiliaClock, setBrasiliaClock] = useState(getBrasiliaClock)
   const [previewImage, setPreviewImage] = useState<'work' | 'about' | null>(
@@ -159,11 +165,16 @@ export default function TestePage() {
           }`}
         >
           {previewImage === 'work' ? (
-            <img
-              src="/works.jpg"
-              alt="Work preview"
-              className={previewImageClassName}
-            />
+            <div
+              className="flex aspect-[2/3] w-full items-center justify-center overflow-hidden bg-cover bg-center"
+              style={{ backgroundImage: `url(${geneticaBackgroundUrl})` }}
+            >
+              <img
+                src="/genetica/Start.png"
+                alt="Genetica Mais"
+                className={geneticaPreviewPhoneClassName}
+              />
+            </div>
           ) : null}
           {previewImage === 'about' ? (
             <img

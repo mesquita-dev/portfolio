@@ -10,10 +10,10 @@ const geneticaBackgroundUrl =
   'https://images.unsplash.com/photo-1569239591652-6cc3025b07fa?auto=format&fit=crop&q=85&w=1600'
 
 const phoneScreenshotClassName =
-  'my-[40px] block h-auto max-h-[90%] w-auto max-w-[75%] object-contain'
+  'block h-auto max-h-[380px] w-auto max-w-[65%] object-contain'
 
-const workProjectMediaBoxClassName =
-  'flex h-full min-h-[420px] w-full items-center justify-center overflow-hidden'
+const geneticaCaseMediaBoxClassName =
+  'flex h-[480px] w-full items-center justify-center overflow-hidden'
 
 function toggleGeneticaTesteLayout(active: boolean) {
   document.documentElement.classList.toggle(LAYOUT_ABOUT_CLASS, active)
@@ -111,22 +111,8 @@ export default function GeneticaTestePage() {
         </h1>
 
         <div className="grid grid-cols-4 gap-6">
-          <div className="col-span-1 flex flex-col gap-2 self-start">
-            <h2 className="m-0">E-commerce app for bovine embryos</h2>
-            <div
-              className={`${workProjectMediaBoxClassName} bg-cover bg-center`}
-              style={{ backgroundImage: `url(${geneticaBackgroundUrl})` }}
-            >
-              <img
-                src="/genetica/Start.png"
-                alt="Genetica Mais"
-                className={phoneScreenshotClassName}
-              />
-            </div>
-          </div>
-
-          <div className="col-span-2 col-start-3 flex flex-col gap-16 self-start">
-            <div className="grid grid-cols-2 gap-6">
+          <div className="col-span-1 flex flex-col gap-16 self-start">
+            <div className="flex flex-col gap-1">
               <h2 className="m-0 self-start text-gray-400">overview</h2>
               <div className="flex flex-col gap-3">
                 <p className="m-0">
@@ -143,12 +129,25 @@ export default function GeneticaTestePage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="flex flex-col gap-3">
               <h2 className="m-0 self-start text-gray-400">role</h2>
               <div className="flex flex-col gap-3">
                 <p className="m-0">Product Designer</p>
                 <p className="m-0 text-gray-400">2024 — 2025</p>
               </div>
+            </div>
+          </div>
+
+          <div className="col-span-2 col-start-3 self-start">
+            <div
+              className={`${geneticaCaseMediaBoxClassName} bg-cover bg-center`}
+              style={{ backgroundImage: `url(${geneticaBackgroundUrl})` }}
+            >
+              <img
+                src="/genetica/Start.png"
+                alt="Genetica Mais"
+                className={phoneScreenshotClassName}
+              />
             </div>
           </div>
         </div>
