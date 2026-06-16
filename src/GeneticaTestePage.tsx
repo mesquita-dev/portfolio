@@ -188,6 +188,33 @@ export default function GeneticaTestePage() {
 
         <div className="grid grid-cols-4 gap-6">
           <div className="col-span-1 flex flex-col gap-6 self-start">
+            <div className="flex justify-between gap-6">
+              <div className="flex flex-col gap-1">
+                <h2 className="m-0 self-start text-gray-400">role</h2>
+                <p className="m-0">Product Designer</p>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                <h2 className="m-0 self-start text-gray-400">team</h2>
+                <p className="m-0">Myself</p>
+              </div>
+            </div>
+
+            <div className="flex justify-between gap-6">
+              <div className="flex flex-col gap-1">
+                <h2 className="m-0 self-start text-gray-400">stacks</h2>
+                <div className="flex flex-col">
+                  <p className="m-0">Figma</p>
+                  <p className="m-0">Motion</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                <h2 className="m-0 self-start text-gray-400">year</h2>
+                <p className="m-0">2024 — 2025</p>
+              </div>
+            </div>
+
             <div className="flex flex-col gap-1">
               <h2 className="m-0 self-start text-gray-400">overview</h2>
               <div className="flex flex-col gap-3">
@@ -215,29 +242,6 @@ export default function GeneticaTestePage() {
               <p className="m-0">
                   Even so, it was one of the most valuable experiences of my career. I learned firsthand that validating an idea with real users — before writing a single line of code — is essential to avoid wasting time and money. Figma and a clickable prototype were enough to reach a clear conclusion, and that alone made the entire process worthwhile.
                 </p>
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <h2 className="m-0 self-start text-gray-400">role</h2>
-              <p className="m-0">Product Designer</p>
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <h2 className="m-0 self-start text-gray-400">team</h2>
-              <p className="m-0">Myself</p>
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <h2 className="m-0 self-start text-gray-400">stacks</h2>
-              <div className="flex flex-col ">
-                <p className="m-0">Figma</p>
-                <p className="m-0">Motion</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <h2 className="m-0 self-start text-gray-400">year</h2>
-              <p className="m-0">2024 — 2025</p>
             </div>
           </div>
 
