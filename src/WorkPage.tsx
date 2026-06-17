@@ -233,7 +233,7 @@ export default function WorkPage() {
 
           <WorkCard
             disabled
-            title="E-commerce app for bovine embryos"
+            title="Platform to find lawyers and an easy way to manage your meetings"
             className="col-span-2 col-start-2 row-start-1"
           >
             <img
