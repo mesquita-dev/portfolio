@@ -187,32 +187,33 @@ export default function GeneticaTestePage() {
         </h1>
 
         <div className="grid grid-cols-4 gap-6">
-          <div className="col-span-1 flex flex-col gap-6 self-start">
-            <div className="flex justify-between gap-6">
-              <div className="flex flex-col gap-1">
-                <h2 className="m-0 self-start text-gray-400">role</h2>
-                <p className="m-0">Product Designer</p>
-              </div>
-
-              <div className="flex flex-col gap-1">
-                <h2 className="m-0 self-start text-gray-400">team</h2>
-                <p className="m-0">Myself</p>
-              </div>
-            </div>
-
-            <div className="flex justify-between gap-6">
-              <div className="flex flex-col gap-1">
-                <h2 className="m-0 self-start text-gray-400">stacks</h2>
-                <div className="flex flex-col">
-                  <p className="m-0">Figma</p>
-                  <p className="m-0">Motion</p>
+          <div className="col-span-2 flex flex-col gap-6 self-start">
+            <div className="flex justify-between gap-2">
+              
+                <div className="flex flex-col gap-1">
+                  <h2 className="m-0 self-start text-gray-400">role</h2>
+                  <p className="m-0">Product Designer</p>
                 </div>
-              </div>
 
-              <div className="flex flex-col gap-1">
-                <h2 className="m-0 self-start text-gray-400">year</h2>
-                <p className="m-0">2024 — 2025</p>
-              </div>
+                <div className="flex flex-col gap-1">
+                  <h2 className="m-0 self-start text-gray-400">team</h2>
+                  <p className="m-0">Myself</p>
+                </div>
+              
+
+                <div className="flex flex-col gap-1">
+                  <h2 className="m-0 self-start text-gray-400">stacks</h2>
+                  <div className="flex flex-col">
+                    <p className="m-0">Figma</p>
+                    <p className="m-0">Motion</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <h2 className="m-0 self-start text-gray-400">year</h2>
+                  <p className="m-0">2024 — 2025</p>
+                </div>
+
             </div>
 
             <div className="flex flex-col gap-1">
