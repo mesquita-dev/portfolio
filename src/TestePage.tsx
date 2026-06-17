@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 /**
- * Playground em /teste — edite este arquivo livremente.
+ * Home em / — edite este arquivo livremente.
  * Os estilos globais do portfolio são resetados enquanto esta rota está ativa.
  */
 const LAYOUT_TESTE_CLASS = 'layout-teste'
@@ -110,7 +110,7 @@ export default function TestePage() {
         <div className="col-span-2 col-start-3 flex items-center justify-between">
           <h1 className="m-0">
             <a
-              href="/teste"
+              href="/"
               className="transition-colors hover:text-[#EC3406]"
             >
               Lucas Mesquita

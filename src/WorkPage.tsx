@@ -15,6 +15,9 @@ const phoneScreenshotClassName =
 const workCardMediaClassName =
   'relative flex h-full min-h-[420px] w-full flex-1 overflow-hidden [&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-[1.02] [&_video]:transition-transform [&_video]:duration-300 [&_video]:ease-out group-hover:[&_video]:scale-[1.02]'
 
+const workCardMediaDisabledClassName =
+  'relative flex h-full min-h-[420px] w-full flex-1 overflow-hidden'
+
 const workProjectMediaBoxClassName =
   'flex h-full min-h-[420px] w-full items-center justify-center overflow-hidden'
 
@@ -50,12 +53,15 @@ function getBrasiliaClock() {
 
 function WorkCardMedia({
   href,
+  disabled = false,
   children,
 }: {
   href?: string
+  disabled?: boolean
   children: ReactNode
 }) {
   const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null)
+  const isInteractive = Boolean(href || disabled)
 
   function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
     const bounds = event.currentTarget.getBoundingClientRect()
@@ -72,18 +78,22 @@ function WorkCardMedia({
 
   return (
     <div
-      className={`${workCardMediaClassName}${href ? ' cursor-none' : ''}`}
-      onPointerMove={href ? handlePointerMove : undefined}
-      onPointerLeave={href ? handlePointerLeave : undefined}
+      className={`${disabled ? workCardMediaDisabledClassName : workCardMediaClassName}${isInteractive ? ' cursor-none' : ''}`}
+      onPointerMove={isInteractive ? handlePointerMove : undefined}
+      onPointerLeave={isInteractive ? handlePointerLeave : undefined}
     >
       {children}
-      {href && pointer ? (
+      {isInteractive && pointer ? (
         <span
           aria-hidden
-          className="pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#EC3406] text-center text-xs leading-tight text-white"
+          className={
+            disabled
+              ? 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gray-200 text-center text-xs leading-tight text-gray-500'
+              : 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#EC3406] text-center text-xs leading-tight text-white'
+          }
           style={{ left: pointer.x, top: pointer.y }}
         >
-          Read case
+          {disabled ? 'case soon' : 'Read case'}
         </span>
       ) : null}
     </div>
@@ -92,29 +102,39 @@ function WorkCardMedia({
 
 function WorkCard({
   href,
+  disabled = false,
   title,
   className,
   children,
 }: {
   href?: string
+  disabled?: boolean
   title: string
   className: string
   children: ReactNode
 }) {
-  const media = <WorkCardMedia href={href}>{children}</WorkCardMedia>
+  const media = (
+    <WorkCardMedia href={href} disabled={disabled}>
+      {children}
+    </WorkCardMedia>
+  )
 
   const content = (
     <>
-      <h2 className="m-0 transition-colors duration-300 ease-out group-hover:text-[#EC3406]">
+      <h2
+        className={`m-0 transition-colors duration-300 ease-out${disabled ? '' : ' group-hover:text-[#EC3406]'}`}
+      >
         {title}
       </h2>
       {media}
     </>
   )
 
-  if (!href) {
+  if (!href || disabled) {
     return (
-      <div className={`group flex h-full flex-col gap-2 self-stretch ${className}`}>
+      <div
+        className={`${disabled ? '' : 'group '}flex h-full flex-col gap-2 self-stretch ${className}`}
+      >
         {content}
       </div>
     )
@@ -173,7 +193,7 @@ export default function WorkPage() {
         <div className="col-span-2 col-start-3 flex items-center justify-between">
           <h1 className="m-0">
             <a
-              href="/teste"
+              href="/"
               className="transition-colors hover:text-[#EC3406]"
             >
               Lucas Mesquita
@@ -195,7 +215,7 @@ export default function WorkPage() {
 
         <div className="grid grid-cols-4 items-stretch gap-x-6">
           <WorkCard
-            href="/geneticaTeste"
+            href="/genetica"
             title="E-commerce app for bovine embryos"
             className="col-span-1 row-start-1"
           >
@@ -212,7 +232,7 @@ export default function WorkPage() {
           </WorkCard>
 
           <WorkCard
-            href="/admentum"
+            disabled
             title="E-commerce app for bovine embryos"
             className="col-span-2 col-start-2 row-start-1"
           >

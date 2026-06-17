@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
 import AboutPage from './AboutPage.tsx'
 import GeneticaTestePage from './GeneticaTestePage.tsx'
@@ -134,19 +134,6 @@ const publishedProjects: PublishedProject[] = [
 ]
 
 const homeProjectFigureHeightClass = 'h-[clamp(280px,42vw,640px)]'
-
-const preloaderMessages = [
-  'Welcome to my portfolio',
-  "I'm a Product Designer",
-  'And sometimes I write code',
-]
-
-const PRELOADER_HOLD_MS = 1200
-const PRELOADER_TRANSITION_MS = 520
-const preloaderEnterAnimation =
-  'preloader-roll-up-enter 520ms cubic-bezier(0.22, 1, 0.36, 1)'
-const preloaderExitAnimation =
-  'preloader-roll-up-exit 520ms cubic-bezier(0.22, 1, 0.36, 1)'
 
 function CaseStudySoonMedia({ className = '' }: { className?: string }) {
   return (
@@ -725,19 +712,6 @@ function GrantoOnePage() {
 }
 
 export default function App() {
-  const isHomePage = window.location.pathname === '/'
-  const navigationEntry = performance.getEntriesByType(
-    'navigation',
-  )[0] as PerformanceNavigationTiming | undefined
-  const isReloadNavigation = navigationEntry?.type === 'reload'
-  const shouldShowPreloaderOnHome =
-    isHomePage &&
-    (isReloadNavigation || sessionStorage.getItem('home-preloader-seen') !== 'true')
-
-  const [preloaderIndex, setPreloaderIndex] = useState(0)
-  const [showPreloader, setShowPreloader] = useState(shouldShowPreloaderOnHome)
-  const [isPreloaderExiting, setIsPreloaderExiting] = useState(false)
-
   useEffect(() => {
     const pathname = window.location.pathname
 
@@ -759,46 +733,10 @@ export default function App() {
     document.title = 'Lucas Mesquita — Designer'
   }, [])
 
-  useEffect(() => {
-    if (!showPreloader) {
-      return
-    }
-
-    const isLastMessage = preloaderIndex === preloaderMessages.length - 1
-    const timeout = window.setTimeout(() => {
-      if (!isPreloaderExiting) {
-        setIsPreloaderExiting(true)
-        return
-      }
-
-      if (isLastMessage) {
-        sessionStorage.setItem('home-preloader-seen', 'true')
-        setShowPreloader(false)
-        return
-      }
-
-      setPreloaderIndex((current) => current + 1)
-      setIsPreloaderExiting(false)
-    }, isPreloaderExiting ? PRELOADER_TRANSITION_MS : PRELOADER_HOLD_MS)
-
-    return () => {
-      window.clearTimeout(timeout)
-    }
-  }, [isPreloaderExiting, preloaderIndex, showPreloader])
-
-  useEffect(() => {
-    if (!showPreloader) {
-      return
-    }
-
-    if (preloaderIndex === 0) {
-      return
-    }
-
-    setIsPreloaderExiting(false)
-  }, [preloaderIndex, showPreloader])
-
-  if (window.location.pathname === '/teste') {
+  if (
+    window.location.pathname === '/' ||
+    window.location.pathname === '/teste'
+  ) {
     return <TestePage />
   }
 
@@ -810,7 +748,7 @@ export default function App() {
     return <WorkPage />
   }
 
-  if (window.location.pathname === '/geneticaTeste') {
+  if (window.location.pathname === '/genetica') {
     return <GeneticaTestePage />
   }
 
@@ -824,51 +762,6 @@ export default function App() {
 
   if (window.location.pathname === '/granto-one') {
     return <GrantoOnePage />
-  }
-
-  if (showPreloader) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-white px-6 text-center">
-        <div className="h-5 overflow-hidden">
-          <h1
-            key={preloaderIndex}
-            className="whitespace-nowrap text-base font-normal leading-5 tracking-[-2%] text-black will-change-transform"
-            style={{
-              animation: isPreloaderExiting
-                ? preloaderExitAnimation
-                : preloaderEnterAnimation,
-            }}
-          >
-            {preloaderMessages[preloaderIndex]}
-          </h1>
-        </div>
-        <style>
-          {`
-            @keyframes preloader-roll-up-enter {
-              0% {
-                transform: translateY(130%);
-                opacity: 0;
-              }
-              100% {
-                transform: translateY(0);
-                opacity: 1;
-              }
-            }
-
-            @keyframes preloader-roll-up-exit {
-              0% {
-                transform: translateY(0);
-                opacity: 1;
-              }
-              100% {
-                transform: translateY(-130%);
-                opacity: 0;
-              }
-            }
-          `}
-        </style>
-      </div>
-    )
   }
 
   return (

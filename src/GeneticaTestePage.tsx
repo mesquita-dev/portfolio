@@ -164,7 +164,7 @@ export default function GeneticaTestePage() {
         <div className="col-span-2 col-start-3 flex items-center justify-between">
           <h1 className="m-0">
             <a
-              href="/teste"
+              href="/"
               className="transition-colors hover:text-[#EC3406]"
             >
               Lucas Mesquita

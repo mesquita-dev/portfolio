@@ -91,7 +91,7 @@ html.layout-about {
   scrollbar-color: #a3a3a3 #f5f5f5;
 }
 
-/* /teste — home sem scroll */
+/* Home (/) — sem scroll */
 html.layout-teste,
 html.layout-teste body,
 html.layout-teste #root {
