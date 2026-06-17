@@ -20,11 +20,13 @@ const geneticaMediaItems = [
     type: 'video' as const,
     src: '/genetica/geneticavideo2.mp4',
     label: 'Genetica Mais preview',
+    backgroundColor: '#F2F2F2',
   },
   {
     type: 'image' as const,
     src: '/genetica/components.png',
     alt: 'Genetica components',
+    backgroundColor: '#F2F2F2',
   },
   {
     type: 'image' as const,
@@ -45,6 +47,7 @@ const geneticaMediaItems = [
     type: 'video' as const,
     src: '/genetica/home.mp4',
     label: 'Genetica Mais home video',
+    backgroundColor: '#F2F2F2',
   },
   {
     type: 'image' as const,
@@ -55,6 +58,7 @@ const geneticaMediaItems = [
     type: 'video' as const,
     src: '/genetica/comprar-embryo.mp4',
     label: 'Genetica Mais comprar embryo video',
+    backgroundColor: '#F2F2F2',
   },
 ]
 
@@ -65,8 +69,14 @@ function GeneticaCaseMedia({
 }) {
   return (
     <div
-      className={`${geneticaCaseMediaBoxClassName} bg-cover bg-center`}
-      style={{ backgroundImage: `url(${geneticaBackgroundUrl})` }}
+      className={`${geneticaCaseMediaBoxClassName}${
+        item.backgroundColor ? '' : ' bg-cover bg-center'
+      }`}
+      style={
+        item.backgroundColor
+          ? { backgroundColor: item.backgroundColor }
+          : { backgroundImage: `url(${geneticaBackgroundUrl})` }
+      }
     >
       {item.type === 'video' ? (
         <video
