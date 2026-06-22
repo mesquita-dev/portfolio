@@ -794,7 +794,7 @@ export default function App() {
                 </a>
                 <a
                   className="text-sm leading-[140%] tracking-[-1%] text-black underline-offset-4 transition-opacity hover:opacity-70 hover:underline"
-                  href="https://drive.google.com/file/d/1AdXMVQ2_PYs5CKkdogCMS-zm19XZqS9g/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1EBZOzHky9Yuqwk0yUgwY3c1Ju5D-mryd/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                 >

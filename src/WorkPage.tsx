@@ -200,7 +200,7 @@ export default function WorkPage() {
             </a>
           </h1>
           <a
-            href="https://drive.google.com/file/d/1AdXMVQ2_PYs5CKkdogCMS-zm19XZqS9g/view"
+            href="https://drive.google.com/file/d/1EBZOzHky9Yuqwk0yUgwY3c1Ju5D-mryd/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             className="m-0 text-gray-400 transition-colors hover:text-[#EC3406]"
