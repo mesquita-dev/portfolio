@@ -92,19 +92,19 @@ html.layout-about {
 }
 
 /* Home (/) — sem scroll */
-html.layout-teste,
-html.layout-teste body,
-html.layout-teste #root {
+html.layout-home,
+html.layout-home body,
+html.layout-home #root {
   height: 100dvh !important;
   max-height: 100dvh !important;
   overflow: hidden !important;
 }
 
-html.layout-teste body {
+html.layout-home body {
   font-family: var(--font-aileron);
 }
 
-html.layout-teste #root {
+html.layout-home #root {
   display: block;
   min-height: 0 !important;
 }
