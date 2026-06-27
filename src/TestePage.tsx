@@ -55,14 +55,88 @@ function AnimatedContactLabel() {
   )
 }
 
+function AnimatedWorkLink({
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  onMouseEnter: () => void
+  onMouseLeave: () => void
+}) {
+  return (
+    <a
+      href="/work"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className="group m-0 block h-[0.85em] w-full overflow-hidden text-9xl leading-[0.85] transition-colors hover:text-[#EC3406]"
+      aria-label="Work — See all"
+    >
+      <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
+        <span className="block whitespace-nowrap leading-[0.85]">Work</span>
+        <span className="block whitespace-nowrap leading-[0.85]">see all</span>
+      </span>
+    </a>
+  )
+}
+
 const previewImageClassName =
   'block aspect-[2/3] w-full object-contain object-center'
 
 const geneticaBackgroundUrl =
   'https://images.unsplash.com/photo-1569239591652-6cc3025b07fa?auto=format&fit=crop&q=85&w=1600'
 
+const workPreviewBlockClassName =
+  'flex h-[calc((100%-1rem)/2)] min-h-0 w-full shrink-0 items-center justify-center overflow-hidden'
+
+const admentumPreviewBlockClassName =
+  'absolute inset-x-0 bottom-[calc(100%+1rem)] flex h-[calc((100%-1rem)/2)] items-center justify-center overflow-visible bg-black'
+
 const geneticaPreviewPhoneClassName =
   'block h-auto max-h-[90%] w-auto max-w-[75%] object-contain'
+
+const petsyPreviewPhoneClassName =
+  'block h-auto max-h-[90%] w-auto max-w-[75%] rounded-xl object-contain'
+
+const admentumPreviewImageClassName =
+  'block h-auto w-full max-w-full object-contain object-center'
+
+function WorkPreviewStack() {
+  return (
+    <div className="relative flex h-full min-h-0 w-full flex-col justify-end gap-4 overflow-visible">
+      <div className={admentumPreviewBlockClassName}>
+        <img
+          src="/admentum/admentum1.jpg"
+          alt="Admentum"
+          className={admentumPreviewImageClassName}
+        />
+      </div>
+
+      <div className={`${workPreviewBlockClassName} bg-[#89D4FF]`}>
+        <video
+          className={petsyPreviewPhoneClassName}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-label="Petsy"
+        >
+          <source src="/works/petsy.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div
+        className={`${workPreviewBlockClassName} bg-cover bg-center`}
+        style={{ backgroundImage: `url(${geneticaBackgroundUrl})` }}
+      >
+        <img
+          src="/genetica/Start.png"
+          alt="Genetica Mais"
+          className={geneticaPreviewPhoneClassName}
+        />
+      </div>
+    </div>
+  )
+}
 
 export default function TestePage() {
   const [brasiliaClock, setBrasiliaClock] = useState(getBrasiliaClock)
@@ -127,7 +201,7 @@ export default function TestePage() {
         </div>
       </header>
 
-      <main className="col-span-4 row-start-2 grid h-full grid-cols-4 items-end gap-6">
+      <main className="col-span-4 row-start-2 grid h-full min-h-0 grid-cols-4 items-end gap-6">
         <div className="col-span-1 flex flex-col gap-1 self-end text-xs text-gray-400">
           <a
             href="https://www.linkedin.com/in/lucas-msqt/"
@@ -160,43 +234,36 @@ export default function TestePage() {
         </div>
 
         <div
-          className={`col-start-2 col-span-1 w-full min-w-0 self-end transition-opacity duration-300 ${
-            previewImage ? 'opacity-100' : 'pointer-events-none opacity-0'
-          }`}
+          className={`relative col-start-2 col-span-1 min-h-0 w-full self-stretch transition-opacity duration-300 ${
+            previewImage === 'work' ? 'overflow-visible' : 'overflow-hidden'
+          } ${previewImage ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
         >
-          {previewImage === 'work' ? (
-            <div
-              className="flex aspect-[2/3] w-full items-center justify-center overflow-hidden bg-cover bg-center"
-              style={{ backgroundImage: `url(${geneticaBackgroundUrl})` }}
-            >
-              <img
-                src="/genetica/Start.png"
-                alt="Genetica Mais"
-                className={geneticaPreviewPhoneClassName}
-              />
-            </div>
-          ) : null}
-          {previewImage === 'about' ? (
-            <img
-              src="/about/me.png"
-              alt="Lucas Mesquita"
-              className={previewImageClassName}
-            />
-          ) : null}
+          <div
+            className={`absolute inset-x-0 bottom-0 top-0 min-h-0 ${
+              previewImage === 'work' ? 'overflow-visible' : ''
+            }`}
+          >
+            {previewImage === 'work' ? <WorkPreviewStack /> : null}
+            {previewImage === 'about' ? (
+              <div className="flex h-full min-h-0 flex-col justify-end">
+                <img
+                  src="/about/me.png"
+                  alt="Lucas Mesquita"
+                  className={previewImageClassName}
+                />
+              </div>
+            ) : null}
+          </div>
         </div>
 
         <nav
           aria-label="Main"
           className="col-span-2 col-start-3 flex min-w-0 flex-col self-end overflow-hidden font-bebas-neue"
         >
-          <a
-            href="/work"
+          <AnimatedWorkLink
             onMouseEnter={() => setPreviewImage('work')}
             onMouseLeave={() => setPreviewImage(null)}
-            className="m-0 block w-full whitespace-nowrap text-9xl leading-[0.85] transition-colors hover:text-[#EC3406]"
-          >
-            Work
-          </a>
+          />
           <a
             href="/about"
             onMouseEnter={() => setPreviewImage('about')}
