@@ -15,6 +15,12 @@ export type CaseStudyPhoneMedia = {
   backgroundColor?: string
 }
 
+export type CaseStudyPhoneGroupMedia = {
+  type: 'phone-image-group'
+  images: { src: string; alt: string }[]
+  backgroundColor?: string
+}
+
 export type CaseStudyScreenMedia = {
   type: 'screen-image'
   src: string
@@ -30,6 +36,7 @@ export type CaseStudyPlaceholderMedia = {
 
 export type CaseStudyMediaItem =
   | CaseStudyPhoneMedia
+  | CaseStudyPhoneGroupMedia
   | CaseStudyScreenMedia
   | CaseStudyPlaceholderMedia
 
@@ -39,6 +46,8 @@ export type CaseStudySectionData = {
   content: ReactNode
   media?: CaseStudyMediaItem[]
   mediaSlice?: readonly [number, number]
+  /** 0–1 scroll progress to reveal section text; omit to show immediately */
+  revealAt?: number
 }
 
 export type CaseStudyConfig = {

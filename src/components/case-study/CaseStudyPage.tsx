@@ -36,6 +36,7 @@ export default function CaseStudyPage({
                 label={section.label}
                 content={section.content}
                 media={resolveSectionMedia(section, gallery)}
+                alwaysVisible={section.revealAt == null}
               />
             ))}
           </div>

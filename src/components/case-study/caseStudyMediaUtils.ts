@@ -16,5 +16,8 @@ export function resolveSectionMedia(
 export function getMediaKey(item: CaseStudyMediaItem, index: number): string {
   if (item.type === 'placeholder') return `placeholder-${index}`
   if (item.type === 'phone-video') return item.label ?? item.src
+  if (item.type === 'phone-image-group') {
+    return item.images.map((image) => image.src).join('-')
+  }
   return item.src
 }
