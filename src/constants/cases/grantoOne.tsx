@@ -12,7 +12,14 @@ export const grantoOneCaseStudy = {
     {
       id: 'overview',
       label: 'overview',
-      media: [{ type: 'placeholder' as const }],
+      media: [
+        {
+          type: 'screen-image' as const,
+          src: '/granto-one/interna-oportunidade.webp',
+          alt: 'Granto One — Interna Oportunidade',
+          variant: 'contain' as const,
+        },
+      ],
       content: <p className="m-0">Writing the next case study.</p>,
     },
   ],

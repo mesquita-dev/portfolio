@@ -20,6 +20,7 @@ export type CaseStudyScreenMedia = {
   src: string
   alt: string
   variant: 'cover' | 'contain'
+  laptop?: boolean
 }
 
 export type CaseStudyPlaceholderMedia = {

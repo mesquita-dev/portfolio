@@ -12,6 +12,13 @@ export const LAYOUT_CLASSES = {
   about: 'layout-about',
 } as const
 
+/** Altere para true quando o case Granto One estiver pronto para produção. */
+export const GRANTO_ONE_PUBLISHED = false
+
+/** Visível em dev enquanto não publicado; em produção depende de GRANTO_ONE_PUBLISHED. */
+export const GRANTO_ONE_VISIBLE =
+  GRANTO_ONE_PUBLISHED || import.meta.env.DEV
+
 export const SOCIAL_LINKS = [
   {
     href: 'https://www.linkedin.com/in/lucas-msqt/',

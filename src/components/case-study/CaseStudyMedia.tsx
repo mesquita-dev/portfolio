@@ -1,4 +1,9 @@
 import { GENETICA_BACKGROUND_URL } from '../../constants/site.ts'
+import {
+  laptopFrameClassName,
+  laptopMediaWrapperClassName,
+  laptopScreenClassName,
+} from './laptopFrameClassNames.ts'
 import type { CaseStudyMediaItem } from './types.ts'
 
 const mediaBoxClassName =
@@ -23,6 +28,22 @@ export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
   }
 
   if (item.type === 'screen-image') {
+    if (item.laptop) {
+      return (
+        <div className={`${mediaBoxClassName} bg-[#F2F2F2]`}>
+          <div className={laptopMediaWrapperClassName}>
+            <div className={laptopFrameClassName}>
+              <img
+                src={item.src}
+                alt={item.alt}
+                className={laptopScreenClassName}
+              />
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className={`${mediaBoxClassName} bg-[#F2F2F2]`}>
         <img

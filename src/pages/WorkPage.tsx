@@ -1,18 +1,17 @@
 import SiteHeader from '../components/SiteHeader.tsx'
 import WorkCard from '../components/work/WorkCard.tsx'
 import { workProjectMediaBoxClassName } from '../components/work/WorkCardMedia.tsx'
-import { GENETICA_BACKGROUND_URL, LAYOUT_CLASSES } from '../constants/site.ts'
+import {
+  laptopFrameClassName,
+  laptopMediaWrapperClassName,
+  laptopScreenClassName,
+} from '../components/case-study/laptopFrameClassNames.ts'
+import { GENETICA_BACKGROUND_URL, GRANTO_ONE_VISIBLE, LAYOUT_CLASSES } from '../constants/site.ts'
 import { useBrasiliaClock } from '../hooks/useBrasiliaClock.ts'
 import { usePageSetup } from '../hooks/usePageSetup.ts'
 
 const phoneScreenshotClassName =
   'my-[40px] block h-auto max-h-[90%] w-auto max-w-[75%] object-contain'
-
-const admentumLaptopFrameClassName =
-  'overflow-hidden rounded-xl border-2 border-[#404040] bg-[#1c1c1c] p-2 shadow-[0_12px_32px_rgba(0,0,0,0.12)]'
-
-const admentumLaptopScreenClassName =
-  'block w-full rounded-md border border-[#2f2f2f] object-contain'
 
 export default function WorkPage() {
   const brasiliaClock = useBrasiliaClock()
@@ -45,17 +44,17 @@ export default function WorkPage() {
           </WorkCard>
 
           <WorkCard
-            disabled
+            href="/admentum"
             title="Platform to find lawyers and an easy way to manage your meetings"
             className="col-span-2 col-start-3 row-start-1"
           >
             <div className={`${workProjectMediaBoxClassName} bg-[#F2F2F2]`}>
-              <div className="flex max-h-[85%] max-w-[90%] flex-col items-center">
-                <div className={admentumLaptopFrameClassName}>
+              <div className={laptopMediaWrapperClassName}>
+                <div className={laptopFrameClassName}>
                   <img
                     src="/admentum/Adv%20-%20Perfil.jpg"
                     alt="Admentum"
-                    className={admentumLaptopScreenClassName}
+                    className={laptopScreenClassName}
                   />
                 </div>
               </div>
@@ -78,6 +77,24 @@ export default function WorkPage() {
               >
                 <source src="/works/petsy.mp4" type="video/mp4" />
               </video>
+            </div>
+          </WorkCard>
+
+          <WorkCard
+            href="/granto-one"
+            title="Internal platform for insurance brokers"
+            className={`col-span-3 col-start-2 row-start-2${GRANTO_ONE_VISIBLE ? '' : ' hidden'}`}
+          >
+            <div className={`${workProjectMediaBoxClassName} bg-[#F2F2F2]`}>
+              <div className={laptopMediaWrapperClassName}>
+                <div className={laptopFrameClassName}>
+                  <img
+                    src="/granto-one/interna-oportunidade.webp"
+                    alt="Granto One"
+                    className={laptopScreenClassName}
+                  />
+                </div>
+              </div>
             </div>
           </WorkCard>
         </div>

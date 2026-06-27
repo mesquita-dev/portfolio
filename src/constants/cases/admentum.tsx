@@ -2,19 +2,19 @@ import type { CaseStudyConfig } from '../../components/case-study/types.ts'
 
 const admentumGallery = [
   { type: 'screen-image' as const, src: '/admentum/admentum1.jpg', alt: 'Admentum capa', variant: 'cover' as const },
-  { type: 'screen-image' as const, src: '/admentum/AdvHome.jpg', alt: 'Admentum home', variant: 'contain' as const },
+  { type: 'screen-image' as const, src: '/admentum/AdvHome.jpg', alt: 'Admentum home', variant: 'contain' as const, laptop: true },
   { type: 'screen-image' as const, src: '/admentum/components-ad.png', alt: 'Admentum components', variant: 'contain' as const },
-  { type: 'screen-image' as const, src: '/admentum/Login.jpg', alt: 'Admentum login', variant: 'contain' as const },
-  { type: 'screen-image' as const, src: '/admentum/Cadastro%20advogado.jpg', alt: 'Admentum cadastro advogado', variant: 'contain' as const },
+  { type: 'screen-image' as const, src: '/admentum/Login.jpg', alt: 'Admentum login', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Cadastro%20advogado.jpg', alt: 'Admentum cadastro advogado', variant: 'contain' as const, laptop: true },
   { type: 'screen-image' as const, src: '/admentum/A.jpg', alt: 'Admentum A', variant: 'cover' as const },
-  { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Perfil.jpg', alt: 'Admentum perfil', variant: 'contain' as const },
-  { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Reuni%C3%B5es.jpg', alt: 'Admentum reunioes', variant: 'contain' as const },
-  { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Config.jpg', alt: 'Admentum config', variant: 'contain' as const },
+  { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Perfil.jpg', alt: 'Admentum perfil', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Reuni%C3%B5es.jpg', alt: 'Admentum reunioes', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Config.jpg', alt: 'Admentum config', variant: 'contain' as const, laptop: true },
   { type: 'screen-image' as const, src: '/admentum/Awhite.jpg', alt: 'Admentum Awhite', variant: 'cover' as const },
-  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20P%C3%A1gina%20inicial.jpg', alt: 'Cliente pagina inicial', variant: 'contain' as const },
-  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Advogados.jpg', alt: 'Cliente advogados', variant: 'contain' as const },
-  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Reuni%C3%B5es%20%28Agendadas%29.jpg', alt: 'Cliente reunioes', variant: 'contain' as const },
-  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Config.jpg', alt: 'Cliente config', variant: 'contain' as const },
+  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20P%C3%A1gina%20inicial.jpg', alt: 'Cliente pagina inicial', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Advogados.jpg', alt: 'Cliente advogados', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Reuni%C3%B5es%20%28Agendadas%29.jpg', alt: 'Cliente reunioes', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Config.jpg', alt: 'Cliente config', variant: 'contain' as const, laptop: true },
 ]
 
 export const admentumCaseStudy = {
