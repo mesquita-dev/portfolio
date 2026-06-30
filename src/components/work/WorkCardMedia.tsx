@@ -1,10 +1,13 @@
 import { useState, type PointerEvent, type ReactNode } from 'react'
 
+const workMediaHeightClassName =
+  'h-[80vh] min-[1920px]:h-[58vh] min-[1920px]:max-h-[600px]'
+
 const workCardMediaClassName =
-  'relative flex h-[80vh] w-full overflow-hidden [&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-[1.02] [&_video]:transition-transform [&_video]:duration-300 [&_video]:ease-out group-hover:[&_video]:scale-[1.02]'
+  `relative flex ${workMediaHeightClassName} w-full overflow-hidden [&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-[1.02] [&_video]:transition-transform [&_video]:duration-300 [&_video]:ease-out group-hover:[&_video]:scale-[1.02]`
 
 const workCardMediaDisabledClassName =
-  'relative flex h-[80vh] w-full overflow-hidden [&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-[1.02]'
+  `relative flex ${workMediaHeightClassName} w-full overflow-hidden [&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-[1.02]`
 
 type WorkCardMediaProps = {
   href?: string
@@ -58,4 +61,4 @@ export default function WorkCardMedia({
 }
 
 export const workProjectMediaBoxClassName =
-  'flex h-[80vh] w-full items-center justify-center overflow-hidden'
+  `flex ${workMediaHeightClassName} w-full items-center justify-center overflow-hidden`

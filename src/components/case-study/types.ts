@@ -46,6 +46,10 @@ export type CaseStudySectionData = {
   content: ReactNode
   media?: CaseStudyMediaItem[]
   mediaSlice?: readonly [number, number]
+  /** Renders copy in the group without a matching media row */
+  copyOnly?: boolean
+  /** Sections with the same id share one copy column wrapper */
+  copyGroup?: string
   /** 0–1 scroll progress to reveal section text; omit to show immediately */
   revealAt?: number
 }

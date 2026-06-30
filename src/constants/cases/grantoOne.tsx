@@ -12,6 +12,7 @@ export const grantoOneCaseStudy = {
     {
       id: 'overview',
       label: 'overview',
+      copyGroup: 'narrative',
       media: [
         {
           type: 'screen-image' as const,

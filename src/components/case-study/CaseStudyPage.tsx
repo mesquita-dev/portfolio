@@ -3,9 +3,11 @@ import { LAYOUT_CLASSES } from '../../constants/site.ts'
 import { useBrasiliaClock } from '../../hooks/useBrasiliaClock.ts'
 import { usePageSetup } from '../../hooks/usePageSetup.ts'
 import CaseStudyBackToTop from './CaseStudyBackToTop.tsx'
+import CaseStudyCopyGroup from './CaseStudyCopyGroup.tsx'
 import CaseStudyMeta from './CaseStudyMeta.tsx'
 import CaseStudySection from './CaseStudySection.tsx'
 import { resolveSectionMedia } from './caseStudyMediaUtils.ts'
+import { groupCaseStudySections } from './groupCaseStudySections.ts'
 import type { CaseStudyConfig } from './types.ts'
 
 export default function CaseStudyPage({
@@ -30,15 +32,23 @@ export default function CaseStudyPage({
           <CaseStudyMeta meta={meta} />
 
           <div className="flex flex-col gap-6">
-            {sections.map((section) => (
-              <CaseStudySection
-                key={section.id}
-                label={section.label}
-                content={section.content}
-                media={resolveSectionMedia(section, gallery)}
-                alwaysVisible={section.revealAt == null}
-              />
-            ))}
+            {groupCaseStudySections(sections).map((chunk) =>
+              chunk.type === 'group' ? (
+                <CaseStudyCopyGroup
+                  key={chunk.sections.map((section) => section.id).join('-')}
+                  sections={chunk.sections}
+                  gallery={gallery}
+                />
+              ) : (
+                <CaseStudySection
+                  key={chunk.section.id}
+                  label={chunk.section.label}
+                  content={chunk.section.content}
+                  media={resolveSectionMedia(chunk.section, gallery)}
+                  alwaysVisible={chunk.section.revealAt == null}
+                />
+              ),
+            )}
           </div>
         </div>
 

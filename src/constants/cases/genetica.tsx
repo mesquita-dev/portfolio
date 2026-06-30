@@ -60,45 +60,83 @@ export const geneticaCaseStudy = {
   gallery: geneticaGallery,
   sections: [
     {
+      id: 'agro-market',
+      label: 'Understanding the agro market',
+      copyGroup: 'narrative',
+      copyOnly: true,
+      content: (
+        <p className="m-0">
+          Brazil is the world's largest exporter and producer of semen and embryos.
+          In 2024, R$17.5 million was invested in semen doses for beef cattle. In
+          that same year, Brazil exported more than 460,000 doses of semen
+          worldwide. For producers, using selected semen and embryos leads to a 4%
+          increase in herd utilization, meaning that in the long term, you have
+          higher quality cattle. It's a market that moves billions, with each
+          passing year seeing more investment and greater profits for producers.
+        </p>
+      ),
+    },
+    {
       id: 'overview',
-      label: 'overview',
+      label: 'Where did the idea of ​​genetics come from?',
+      copyGroup: 'narrative',
       mediaSlice: [0, 4] as const,
       content: (
-        <>
-          <p className="m-0">
-            Genética Mais was born from my first professional experience at ABS,
-            the world's largest livestock company, where I worked in the bovine
-            semen and embryo storage department. There, I noticed the sector was
-            extremely outdated and technology-poor — and I saw an opportunity.
-          </p>
-          <p className="m-0">
-            The idea was an e-commerce platform where genetics producers could
-            list bovine semen and embryos, and buyers could select the desired
-            quantity and have it delivered directly to their farm — simple,
-            direct, and digital.
-          </p>
-        </>
+        <p className="m-0">
+          My first job was at ABS, the world's largest producer of genetics.
+          There, I worked in the semen and embryo stock, and that's where I saw
+          the possibility of doing something more technologically advanced.
+          Excel spreadsheets, livestock magazines, and phone conversations are
+          still widely used, and the idea arose to create an app to facilitate
+          the commercialization of this semen and embryos.
+        </p>
       ),
     },
     {
       id: 'process',
       label: 'process',
+      copyGroup: 'narrative',
       revealAt: 0.4,
       mediaSlice: [4, 5] as const,
       content: (
         <>
           <p className="m-0">
-            To validate the concept, I attended livestock events where I conducted
-            field research, presented an interactive prototype, and spoke with
-            genetics producers, buyers, veterinarians, and genetics center
-            employees. The results were encouraging — most people found the idea
-            relevant and said they would use the product.
+            The first thing to do was research the market to see if there were any
+            apps that could do this. To my surprise, there weren't many. So, in
+            order to present it to potential users, I had to create it in Figma
+            first and then present it.
           </p>
           <p className="m-0">
-            However, an unavoidable contractual barrier emerged: genetics centers
-            require that all commercialization be handled exclusively through their
-            sales representatives, which made the business model unviable. The
-            project never moved into development.
+            Using my experience in the field and the research, I created a design
+            in Figma using a component library I created myself and an interactive
+            prototype so I could simulate the final version of this app if it were
+            actually developed.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: 'process-duplicate',
+      label: 'field study with real users',
+      copyGroup: 'narrative',
+      copyOnly: true,
+      revealAt: 0.4,
+      content: (
+        <>
+          <p className="m-0">
+            In 2025, the largest livestock exhibition in Brazil took place,
+            providing an excellent opportunity to demonstrate the application to
+            real users. At this event, I had the opportunity to speak with more
+            than 5 users to understand their pain points, perspectives, doubts,
+            and feedback.
+          </p>
+          <p className="m-0">
+            It was very interesting, and they all said they would use it.
+            However, two of them raised points not previously considered. The
+            places that sell these products have contracts stipulating that they
+            can only be sold by their sales representatives. This makes the
+            product unviable because it would violate the contracts and could
+            lead to legal problems.
           </p>
         </>
       ),
@@ -106,15 +144,15 @@ export const geneticaCaseStudy = {
     {
       id: 'result',
       label: 'result',
+      copyGroup: 'narrative',
       revealAt: 0.8,
       mediaSlice: [5, 7] as const,
       content: (
         <p className="m-0">
-          Even so, it was one of the most valuable experiences of my career. I
-          learned firsthand that validating an idea with real users — before
-          writing a single line of code — is essential to avoid wasting time and
-          money. Figma and a clickable prototype were enough to reach a clear
-          conclusion, and that alone made the entire process worthwhile.
+          Although the result wasn't positive, and I did end up creating an app
+          for it, it was very important for exercising my craft, conducting field
+          research with real users, and attempting to build an app. Nobody creates
+          anything without trying...
         </p>
       ),
     },

@@ -30,6 +30,7 @@ export const admentumCaseStudy = {
     {
       id: 'overview',
       label: 'overview',
+      copyGroup: 'narrative',
       mediaSlice: [0, 5] as const,
       content: (
         <>
@@ -50,6 +51,7 @@ export const admentumCaseStudy = {
     {
       id: 'process',
       label: 'process',
+      copyGroup: 'narrative',
       revealAt: 0.4,
       mediaSlice: [5, 10] as const,
       content: (
@@ -75,6 +77,7 @@ export const admentumCaseStudy = {
     {
       id: 'status',
       label: 'status',
+      copyGroup: 'narrative',
       revealAt: 0.8,
       mediaSlice: [10, 14] as const,
       content: (

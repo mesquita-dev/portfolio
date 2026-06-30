@@ -3,8 +3,10 @@ import WorkCard from '../components/work/WorkCard.tsx'
 import { workProjectMediaBoxClassName } from '../components/work/WorkCardMedia.tsx'
 import {
   laptopFrameClassName,
+  laptopFrameWorkWideClassName,
   laptopMediaWrapperClassName,
   laptopScreenClassName,
+  laptopScreenWorkWideClassName,
 } from '../components/case-study/laptopFrameClassNames.ts'
 import { GENETICA_BACKGROUND_URL, GRANTO_ONE_VISIBLE, LAYOUT_CLASSES } from '../constants/site.ts'
 import { useBrasiliaClock } from '../hooks/useBrasiliaClock.ts'
@@ -85,13 +87,13 @@ export default function WorkPage() {
             title="Internal platform for insurance brokers"
             className={`col-span-3 col-start-2 row-start-2${GRANTO_ONE_VISIBLE ? '' : ' hidden'}`}
           >
-            <div className={`${workProjectMediaBoxClassName} bg-[#F2F2F2]`}>
+            <div className={`${workProjectMediaBoxClassName} items-stretch bg-[#f4edff]`}>
               <div className={laptopMediaWrapperClassName}>
-                <div className={laptopFrameClassName}>
+                <div className={laptopFrameWorkWideClassName}>
                   <img
                     src="/granto-one/interna-oportunidade.webp"
                     alt="Granto One"
-                    className={laptopScreenClassName}
+                    className={laptopScreenWorkWideClassName}
                   />
                 </div>
               </div>
