@@ -1,6 +1,3 @@
-export const BEBAS_NEUE_FONT_URL =
-  'https://api.fontshare.com/v2/css?f[]=bebas-neue@400&display=swap'
-
 export const RESUME_URL =
   'https://drive.google.com/file/d/1EBZOzHky9Yuqwk0yUgwY3c1Ju5D-mryd/view?usp=sharing'
 

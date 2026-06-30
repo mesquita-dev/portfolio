@@ -1,11 +1,13 @@
-import { useEffect } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
+import SkipToContent from './components/SkipToContent.tsx'
 import { GRANTO_ONE_VISIBLE } from './constants/site.ts'
-import AboutPage from './pages/AboutPage.tsx'
-import Admentum from './pages/Admentum.tsx'
-import Genetica from './pages/Genetica.tsx'
-import GrantoOne from './pages/GrantoOne.tsx'
-import HomePage from './pages/HomePage.tsx'
-import WorkPage from './pages/WorkPage.tsx'
+
+const HomePage = lazy(() => import('./pages/HomePage.tsx'))
+const AboutPage = lazy(() => import('./pages/AboutPage.tsx'))
+const WorkPage = lazy(() => import('./pages/WorkPage.tsx'))
+const Genetica = lazy(() => import('./pages/Genetica.tsx'))
+const Admentum = lazy(() => import('./pages/Admentum.tsx'))
+const GrantoOne = lazy(() => import('./pages/GrantoOne.tsx'))
 
 const DOCUMENT_TITLE = 'Lucas Mesquita — Designer'
 
@@ -14,20 +16,35 @@ export default function AppRouter() {
     document.title = DOCUMENT_TITLE
   }, [])
 
+  let page
+
   switch (window.location.pathname) {
     case '/':
-      return <HomePage />
+      page = <HomePage />
+      break
     case '/about':
-      return <AboutPage />
+      page = <AboutPage />
+      break
     case '/work':
-      return <WorkPage />
+      page = <WorkPage />
+      break
     case '/genetica':
-      return <Genetica />
+      page = <Genetica />
+      break
     case '/admentum':
-      return <Admentum />
+      page = <Admentum />
+      break
     case '/granto-one':
-      return GRANTO_ONE_VISIBLE ? <GrantoOne /> : <WorkPage />
+      page = GRANTO_ONE_VISIBLE ? <GrantoOne /> : <WorkPage />
+      break
     default:
-      return <HomePage />
+      page = <HomePage />
   }
+
+  return (
+    <>
+      <SkipToContent />
+      <Suspense fallback={null}>{page}</Suspense>
+    </>
+  )
 }

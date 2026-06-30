@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import type { CaseStudyMeta as CaseStudyMetaData } from './types.ts'
 
 type CaseStudyMetaProps = {
@@ -9,11 +10,11 @@ function MetaField({
   children,
 }: {
   label: string
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <h2 className="m-0 self-start text-gray-400">{label}</h2>
+      <h2 className="m-0 self-start capitalize text-gray-400">{label}</h2>
       {children}
     </div>
   )

@@ -1,6 +1,5 @@
 import SiteHeader from '../SiteHeader.tsx'
 import { LAYOUT_CLASSES } from '../../constants/site.ts'
-import { useBrasiliaClock } from '../../hooks/useBrasiliaClock.ts'
 import { usePageSetup } from '../../hooks/usePageSetup.ts'
 import CaseStudyBackToTop from './CaseStudyBackToTop.tsx'
 import CaseStudyCopyGroup from './CaseStudyCopyGroup.tsx'
@@ -17,15 +16,13 @@ export default function CaseStudyPage({
   sections,
   showBackToTop = true,
 }: CaseStudyConfig) {
-  const brasiliaClock = useBrasiliaClock()
-
   usePageSetup(LAYOUT_CLASSES.about)
 
   return (
     <div className="mx-auto grid w-full max-w-7xl grid-cols-4 py-4 font-aileron text-sm">
-      <SiteHeader clock={brasiliaClock} showBackLink />
+      <SiteHeader showBackLink />
 
-      <main className="col-span-4 mt-32 flex flex-col gap-16 pb-16">
+      <main id="main-content" className="col-span-4 mt-32 flex flex-col gap-16 pb-16">
         <h1 className="m-0 font-bebas-neue text-9xl leading-[0.85]">{title}</h1>
 
         <div className="flex flex-col gap-6">
@@ -45,7 +42,7 @@ export default function CaseStudyPage({
                   label={chunk.section.label}
                   content={chunk.section.content}
                   media={resolveSectionMedia(chunk.section, gallery)}
-                  alwaysVisible={chunk.section.revealAt == null}
+                  alwaysVisible={!chunk.section.revealOnScroll}
                 />
               ),
             )}

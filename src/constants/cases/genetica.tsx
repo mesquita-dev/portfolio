@@ -37,7 +37,7 @@ const geneticaGallery = [
     type: 'phone-image-group' as const,
     images: [
       { src: '/genetica/Mercado.png', alt: 'Genetica Mercado' },
-      { src: '/genetica/Favoritos.png', alt: 'Genetica Favoritos' },
+      { src: '/genetica/Favoritos.webp', alt: 'Genetica Favoritos' },
       { src: '/genetica/Carrinho.png', alt: 'Genetica Carrinho' },
     ],
   },
@@ -96,7 +96,7 @@ export const geneticaCaseStudy = {
       id: 'process',
       label: 'process',
       copyGroup: 'narrative',
-      revealAt: 0.4,
+      revealOnScroll: true,
       mediaSlice: [4, 5] as const,
       content: (
         <>
@@ -120,7 +120,7 @@ export const geneticaCaseStudy = {
       label: 'field study with real users',
       copyGroup: 'narrative',
       copyOnly: true,
-      revealAt: 0.4,
+      revealOnScroll: true,
       content: (
         <>
           <p className="m-0">
@@ -145,7 +145,7 @@ export const geneticaCaseStudy = {
       id: 'result',
       label: 'result',
       copyGroup: 'narrative',
-      revealAt: 0.8,
+      revealOnScroll: true,
       mediaSlice: [5, 7] as const,
       content: (
         <p className="m-0">

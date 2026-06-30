@@ -1,5 +1,10 @@
 import { memo } from 'react'
-import { GENETICA_BACKGROUND_URL } from '../constants/site.ts'
+import LazyVideo from './LazyVideo.tsx'
+import {
+  WORK_ADMENTUM_MEDIA,
+  WORK_GENETICA_MEDIA,
+  WORK_PETSY_MEDIA,
+} from '../constants/workProjects.ts'
 
 const workPreviewBlockClassName =
   'flex h-[calc((100%-1rem)/2)] min-h-0 w-full shrink-0 items-center justify-center overflow-hidden'
@@ -21,34 +26,35 @@ function WorkPreviewStack() {
     <div className="relative flex h-full min-h-0 w-full flex-col justify-end gap-4 overflow-visible">
       <div className={admentumPreviewBlockClassName}>
         <img
-          src="/admentum/admentum1.jpg"
-          alt="Admentum"
+          src={WORK_ADMENTUM_MEDIA.previewImageSrc}
+          alt={WORK_ADMENTUM_MEDIA.previewImageAlt}
           className={admentumPreviewImageClassName}
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
-      <div className={`${workPreviewBlockClassName} bg-[#89D4FF]`}>
-        <video
+      <div
+        className={workPreviewBlockClassName}
+        style={{ backgroundColor: WORK_PETSY_MEDIA.backgroundColor }}
+      >
+        <LazyVideo
+          src={WORK_PETSY_MEDIA.videoSrc}
           className={petsyPreviewPhoneClassName}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          aria-label="Petsy"
-        >
-          <source src="/works/petsy.mp4" type="video/mp4" />
-        </video>
+          aria-label={WORK_PETSY_MEDIA.ariaLabel}
+        />
       </div>
 
       <div
         className={`${workPreviewBlockClassName} bg-cover bg-center`}
-        style={{ backgroundImage: `url(${GENETICA_BACKGROUND_URL})` }}
+        style={{ backgroundImage: `url(${WORK_GENETICA_MEDIA.backgroundUrl})` }}
       >
         <img
-          src="/genetica/Start.png"
-          alt="Genetica Mais"
+          src={WORK_GENETICA_MEDIA.phoneImageSrc}
+          alt={WORK_GENETICA_MEDIA.phoneImageAlt}
           className={geneticaPreviewPhoneClassName}
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

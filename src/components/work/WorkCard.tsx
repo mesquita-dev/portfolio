@@ -44,7 +44,7 @@ export default function WorkCard({
   return (
     <a
       href={href}
-      className={`group flex cursor-pointer flex-col gap-2 self-start ${className}`}
+      className={`group flex cursor-pointer flex-col gap-2 self-start outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EC3406] ${className}`}
     >
       {content}
     </a>

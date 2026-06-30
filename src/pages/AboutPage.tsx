@@ -9,25 +9,26 @@ import {
   experienceEntries,
 } from '../constants/aboutContent.ts'
 import { LAYOUT_CLASSES } from '../constants/site.ts'
-import { useBrasiliaClock } from '../hooks/useBrasiliaClock.ts'
 import { usePageSetup } from '../hooks/usePageSetup.ts'
 
 export default function AboutPage() {
-  const brasiliaClock = useBrasiliaClock()
-
   usePageSetup(LAYOUT_CLASSES.about)
 
   return (
     <div className="mx-auto grid w-full max-w-7xl grid-cols-4 py-4 font-aileron text-sm">
-      <SiteHeader clock={brasiliaClock} showBackLink />
+      <SiteHeader showBackLink />
 
-      <main className="col-span-4 mt-32 flex flex-col gap-16 pb-16">
+      <main id="main-content" className="col-span-4 mt-32 flex flex-col gap-16 pb-16">
         <h1 className="m-0 font-bebas-neue text-9xl leading-[0.85]">about</h1>
 
         <div className="grid grid-cols-4 gap-6">
           <div className="col-span-1 flex w-full min-w-0 flex-col gap-16 self-start">
-            {aboutPhotos.map((photo) => (
-              <PhotoWithCaption key={photo.src} {...photo} />
+            {aboutPhotos.map((photo, index) => (
+              <PhotoWithCaption
+                key={photo.src}
+                {...photo}
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
             ))}
           </div>
 

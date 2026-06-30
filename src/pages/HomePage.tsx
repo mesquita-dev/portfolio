@@ -3,7 +3,6 @@ import AnimatedNavItem, { navLinkClassName } from '../components/AnimatedNavItem
 import PreviewPanel, { type PreviewType } from '../components/PreviewPanel.tsx'
 import SiteHeader from '../components/SiteHeader.tsx'
 import { ACCENT_HOVER_CLASS, LAYOUT_CLASSES, SOCIAL_LINKS } from '../constants/site.ts'
-import { useBrasiliaClock } from '../hooks/useBrasiliaClock.ts'
 import { usePageSetup } from '../hooks/usePageSetup.ts'
 
 /**
@@ -11,24 +10,35 @@ import { usePageSetup } from '../hooks/usePageSetup.ts'
  * Os estilos globais do portfolio são resetados enquanto esta rota está ativa.
  */
 export default function HomePage() {
-  const brasiliaClock = useBrasiliaClock()
   const [activePreview, setActivePreview] = useState<PreviewType>(null)
+  const [contactHintActive, setContactHintActive] = useState(false)
 
   usePageSetup(LAYOUT_CLASSES.home)
 
   const showWorkPreview = useCallback(() => setActivePreview('work'), [])
   const showAboutPreview = useCallback(() => setActivePreview('about'), [])
   const hidePreview = useCallback(() => setActivePreview(null), [])
+  const showContactHint = useCallback(() => setContactHintActive(true), [])
+  const hideContactHint = useCallback(() => setContactHintActive(false), [])
 
   return (
     <div
       id="home-canvas"
       className="mx-auto grid min-h-dvh w-full max-w-7xl grid-cols-4 grid-rows-[auto_1fr] py-4 font-aileron text-sm"
     >
-      <SiteHeader clock={brasiliaClock} />
+      <SiteHeader />
 
-      <main className="col-span-4 row-start-2 grid h-full min-h-0 grid-cols-4 items-end gap-6">
-        <div className="col-span-1 flex flex-col gap-1 self-end text-xs text-gray-400">
+      <main
+        id="main-content"
+        className="col-span-4 row-start-2 grid h-full min-h-0 grid-cols-4 items-end gap-6"
+      >
+        <h1 className="sr-only">Lucas Mesquita — Product Designer</h1>
+
+        <div
+          id="contact-links"
+          aria-label="Contact links"
+          className={`col-span-1 flex flex-col gap-1 self-end text-xs text-gray-400 transition-colors duration-300 focus-within:text-black${contactHintActive ? ' text-black' : ''}`}
+        >
           {SOCIAL_LINKS.map(({ href, label, external }) => (
             <a
               key={href}
@@ -57,8 +67,11 @@ export default function HomePage() {
           />
           <a
             href="/about"
+            aria-label="About"
             onMouseEnter={showAboutPreview}
             onMouseLeave={hidePreview}
+            onFocus={showAboutPreview}
+            onBlur={hidePreview}
             className={navLinkClassName}
           >
             About
@@ -66,7 +79,10 @@ export default function HomePage() {
           <AnimatedNavItem
             primary="Contact"
             secondary="Look left"
-            ariaLabel="Contact — Look left"
+            ariaLabel="Contact — social links on the left"
+            ariaDescribedBy="contact-links"
+            onMouseEnter={showContactHint}
+            onMouseLeave={hideContactHint}
           />
         </nav>
       </main>

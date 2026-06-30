@@ -50,8 +50,8 @@ export type CaseStudySectionData = {
   copyOnly?: boolean
   /** Sections with the same id share one copy column wrapper */
   copyGroup?: string
-  /** 0–1 scroll progress to reveal section text; omit to show immediately */
-  revealAt?: number
+  /** Reveal copy on scroll (desktop); omit to show immediately */
+  revealOnScroll?: boolean
 }
 
 export type CaseStudyConfig = {

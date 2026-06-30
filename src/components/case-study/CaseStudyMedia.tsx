@@ -1,4 +1,5 @@
 import { GENETICA_BACKGROUND_URL } from '../../constants/site.ts'
+import LazyVideo from '../LazyVideo.tsx'
 import {
   laptopFrameClassName,
   laptopMediaWrapperClassName,
@@ -48,6 +49,8 @@ export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
                 src={item.src}
                 alt={item.alt}
                 className={laptopScreenClassName}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -61,6 +64,8 @@ export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
           src={item.src}
           alt={item.alt}
           className={`h-full w-full object-${item.variant}${item.variant === 'contain' ? ' p-4' : ''}`}
+          loading="lazy"
+          decoding="async"
         />
       </div>
     )
@@ -83,6 +88,8 @@ export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
               src={image.src}
               alt={image.alt}
               className={getPhoneGroupImageClassName(item.images.length)}
+              loading="lazy"
+              decoding="async"
             />
           ))}
         </div>
@@ -100,22 +107,18 @@ export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
       style={backgroundStyle}
     >
       {item.type === 'phone-video' ? (
-        <video
+        <LazyVideo
+          src={item.src}
           className={`${phoneScreenshotClassName} rounded-xl`}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
           aria-label={item.label}
-        >
-          <source src={item.src} type="video/mp4" />
-        </video>
+        />
       ) : (
         <img
           src={item.src}
           alt={item.alt ?? ''}
           className={phoneScreenshotClassName}
+          loading="lazy"
+          decoding="async"
         />
       )}
     </div>

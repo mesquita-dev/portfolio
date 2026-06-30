@@ -38,7 +38,7 @@ export default function WorkCardMedia({
 
   return (
     <div
-      className={`${disabled ? workCardMediaDisabledClassName : workCardMediaClassName}${isInteractive ? ' cursor-none' : ''}`}
+      className={`${disabled ? workCardMediaDisabledClassName : workCardMediaClassName}${isInteractive ? ' pointer-fine:cursor-none' : ''}`}
       onPointerMove={isInteractive ? handlePointerMove : undefined}
       onPointerLeave={isInteractive ? handlePointerLeave : undefined}
     >

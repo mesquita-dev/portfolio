@@ -33,6 +33,8 @@ function PreviewPanel({ activePreview }: PreviewPanelProps) {
               src="/about/me.png"
               alt="Lucas Mesquita"
               className={previewImageClassName}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         ) : null}

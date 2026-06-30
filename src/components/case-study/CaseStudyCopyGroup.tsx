@@ -26,7 +26,7 @@ export default function CaseStudyCopyGroup({
             key={section.id}
             label={section.label}
             content={section.content}
-            alwaysVisible={section.revealAt == null}
+            alwaysVisible={!section.revealOnScroll}
           />
         ))}
       </div>

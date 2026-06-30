@@ -35,15 +35,18 @@ export const admentumCaseStudy = {
       content: (
         <>
           <p className="m-0">
-            Admentum was born from a real pain point: finding and hiring a
-            trustworthy lawyer in Brazil is still a confusing, informal process —
-            heavily reliant on personal referrals and WhatsApp conversations.
+            The idea came about during an informal conversation with a cousin who
+            is a lawyer. I realized that it's still a manual and slow process,
+            with much done through personal contact, like WhatsApp. Sometimes
+            there's not much scheduling organization, and it's difficult to find
+            new clients.
           </p>
           <p className="m-0">
-            After benchmarking competitors and conducting user interviews, it
-            became clear the market lacked a direct, transparent, and digital
-            solution to connect people with qualified lawyers. That insight pushed
-            me to take the entrepreneurial leap.
+            The OAB (Brazilian Bar Association) prohibits self-promotion, meaning
+            paid traffic and excessive media use; in a way, it's illegal. What we
+            propose is a way to find a lawyer from anywhere in the country and hold
+            meetings directly through Admentum, without needing Google Meet, Zoom,
+            or third-party platforms.
           </p>
         </>
       ),
@@ -52,7 +55,7 @@ export const admentumCaseStudy = {
       id: 'process',
       label: 'process',
       copyGroup: 'narrative',
-      revealAt: 0.4,
+      revealOnScroll: true,
       mediaSlice: [5, 10] as const,
       content: (
         <>
@@ -78,7 +81,7 @@ export const admentumCaseStudy = {
       id: 'status',
       label: 'status',
       copyGroup: 'narrative',
-      revealAt: 0.8,
+      revealOnScroll: true,
       mediaSlice: [10, 14] as const,
       content: (
         <p className="m-0">
