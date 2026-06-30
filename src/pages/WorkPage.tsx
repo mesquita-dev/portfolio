@@ -3,13 +3,13 @@ import LazyVideo from '../components/LazyVideo.tsx'
 import WorkCard from '../components/work/WorkCard.tsx'
 import { workProjectMediaBoxClassName } from '../components/work/WorkCardMedia.tsx'
 import {
-  laptopFrameClassName,
+  laptopFrameWorkClassName,
   laptopFrameWorkWideClassName,
   laptopMediaWrapperClassName,
   laptopScreenClassName,
   laptopScreenWorkWideClassName,
 } from '../components/case-study/laptopFrameClassNames.ts'
-import { GRANTO_ONE_VISIBLE, LAYOUT_CLASSES } from '../constants/site.ts'
+import { GRANTO_ONE_PUBLISHED, LAYOUT_CLASSES } from '../constants/site.ts'
 import {
   WORK_ADMENTUM_MEDIA,
   WORK_GENETICA_MEDIA,
@@ -58,7 +58,7 @@ export default function WorkPage() {
           >
             <div className={`${workProjectMediaBoxClassName} bg-[#F2F2F2]`}>
               <div className={laptopMediaWrapperClassName}>
-                <div className={laptopFrameClassName}>
+                <div className={laptopFrameWorkClassName}>
                   <img
                     src={WORK_ADMENTUM_MEDIA.cardImageSrc}
                     alt={WORK_ADMENTUM_MEDIA.cardImageAlt}
@@ -88,9 +88,10 @@ export default function WorkPage() {
           </WorkCard>
 
           <WorkCard
-            href="/granto-one"
-            title="Internal platform for insurance brokers"
-            className={`col-span-3 col-start-2 row-start-2${GRANTO_ONE_VISIBLE ? '' : ' hidden'}`}
+            href={GRANTO_ONE_PUBLISHED ? '/granto-one' : undefined}
+            disabled={!GRANTO_ONE_PUBLISHED}
+            title="Built an internal platform for an insurance brokerage, reducing lead time by 70%."
+            className="col-span-3 col-start-2 row-start-2"
           >
             <div
               className={`${workProjectMediaBoxClassName} items-stretch`}

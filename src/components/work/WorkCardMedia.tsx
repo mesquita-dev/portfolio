@@ -4,10 +4,10 @@ const workMediaHeightClassName =
   'h-[80vh] min-[1920px]:h-[58vh] min-[1920px]:max-h-[600px]'
 
 const workCardMediaClassName =
-  `relative flex ${workMediaHeightClassName} w-full overflow-hidden [&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-[1.02] [&_video]:transition-transform [&_video]:duration-300 [&_video]:ease-out group-hover:[&_video]:scale-[1.02]`
+  `relative flex ${workMediaHeightClassName} w-full overflow-hidden [&>div>img]:transition-transform [&>div>img]:duration-300 [&>div>img]:ease-out group-hover:[&>div>img]:scale-[1.02] [&_video]:transition-transform [&_video]:duration-300 [&_video]:ease-out group-hover:[&_video]:scale-[1.02]`
 
 const workCardMediaDisabledClassName =
-  `relative flex ${workMediaHeightClassName} w-full overflow-hidden [&_img]:transition-transform [&_img]:duration-300 [&_img]:ease-out group-hover:[&_img]:scale-[1.02]`
+  `relative flex ${workMediaHeightClassName} w-full overflow-hidden [&>div>img]:transition-transform [&>div>img]:duration-300 [&>div>img]:ease-out group-hover:[&>div>img]:scale-[1.02]`
 
 type WorkCardMediaProps = {
   href?: string

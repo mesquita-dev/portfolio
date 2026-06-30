@@ -8,12 +8,12 @@ const admentumGallery = [
   { type: 'screen-image' as const, src: '/admentum/Cadastro%20advogado.webp', alt: 'Admentum cadastro advogado', variant: 'contain' as const, laptop: true },
   { type: 'screen-image' as const, src: '/admentum/A.jpg', alt: 'Admentum A', variant: 'cover' as const },
   { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Perfil.webp', alt: 'Admentum perfil', variant: 'contain' as const, laptop: true },
-  { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Reuni%C3%B5es.webp', alt: 'Admentum reunioes', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Reunioes.webp', alt: 'Admentum reunioes', variant: 'contain' as const, laptop: true },
   { type: 'screen-image' as const, src: '/admentum/Adv%20-%20Config.webp', alt: 'Admentum config', variant: 'contain' as const, laptop: true },
   { type: 'screen-image' as const, src: '/admentum/Awhite.jpg', alt: 'Admentum Awhite', variant: 'cover' as const },
-  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20P%C3%A1gina%20inicial.webp', alt: 'Cliente pagina inicial', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Pagina%20inicial.webp', alt: 'Cliente pagina inicial', variant: 'contain' as const, laptop: true },
   { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Advogados.webp', alt: 'Cliente advogados', variant: 'contain' as const, laptop: true },
-  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Reuni%C3%B5es%20%28Agendadas%29.webp', alt: 'Cliente reunioes', variant: 'contain' as const, laptop: true },
+  { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Reunioes%20%28Agendadas%29.webp', alt: 'Cliente reunioes', variant: 'contain' as const, laptop: true },
   { type: 'screen-image' as const, src: '/admentum/Cliente%20-%20Config.webp', alt: 'Cliente config', variant: 'contain' as const, laptop: true },
 ]
 
@@ -53,40 +53,64 @@ export const admentumCaseStudy = {
     },
     {
       id: 'process',
-      label: 'process',
+      label: 'understanding the problem',
       copyGroup: 'narrative',
       revealOnScroll: true,
       mediaSlice: [5, 10] as const,
       content: (
         <>
           <p className="m-0">
-            Drawing from my experience with digital products, I knew that building
-            without a solid visual foundation would be costly down the road. Before
-            designing a single product screen, I built Hades — a Design System from
-            scratch using React, Tailwind, and Storybook. I defined primitive
-            tokens, components, and variants to ensure consistency and speed
-            throughout development.
+            Talking mainly with this cousin and other lawyer friends, I realized
+            that the issue of scheduling was very recurrent, and they all found it
+            interesting to have scheduling automations and improvements.
+            Furthermore, practically all of them said they were interested in the
+            remote work model. Admentum came to give more visibility and freedom to
+            these lawyers.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: 'building',
+      label: 'Admentum creation process',
+      copyGroup: 'narrative',
+      copyOnly: true,
+      revealOnScroll: true,
+      content: (
+        <>
+          <p className="m-0">
+            Having worked with digital products for quite some time, the most
+            important thing is to have a solid foundation to avoid future rework.
+            With that in mind, my first action was to create Hades, a design system
+            for Admentum. It includes colors, typographic scale, atomic components,
+            and uses primitive tokens for ease of use.
           </p>
           <p className="m-0">
-            I invited a friend to co-found the company, and together we started
-            building. I took the lead as a Design Engineer — designing interfaces
-            in Figma and coding the front-end myself using React, Tailwind,
-            TypeScript, and Motion. This overlap between design and engineering gave
-            me full ownership over the final user experience.
+            For development, I chose Cursor because, having front-end experience,
+            it was the tool that best fit my process. I used it to code my design
+            system, upload it to Storybook, and also release the npm package.
+          </p>
+          <p className="m-0">
+            Because I have good front-end experience but not so much back-end
+            experience, I decided to call a friend to code Admentum together.
+            Today I am responsible for design, front-end, finding users, and
+            searching for new features.
           </p>
         </>
       ),
     },
     {
       id: 'status',
-      label: 'status',
+      label: 'next steps of the admentum',
       copyGroup: 'narrative',
       revealOnScroll: true,
       mediaSlice: [10, 14] as const,
       content: (
         <p className="m-0">
-          Admentum is currently in the validation phase. We're testing with early
-          users, gathering feedback, and iterating quickly.
+          Today Admentum is up and running with a test user. We are currently
+          making the final refinements and preparing for its launch. I am promoting
+          it so that people can find lawyers and schedule meetings, and I am also
+          looking for lawyers to register on the platform.
         </p>
       ),
     },

@@ -2,7 +2,7 @@ import { Suspense, lazy, useEffect } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop.tsx'
 import SkipToContent from './components/SkipToContent.tsx'
-import { GRANTO_ONE_VISIBLE } from './constants/site.ts'
+import { GRANTO_ONE_ROUTE_ENABLED } from './constants/site.ts'
 
 const HomePage = lazy(() => import('./pages/HomePage.tsx'))
 const AboutPage = lazy(() => import('./pages/AboutPage.tsx'))
@@ -14,7 +14,7 @@ const GrantoOne = lazy(() => import('./pages/GrantoOne.tsx'))
 const DOCUMENT_TITLE = 'Lucas Mesquita — Designer'
 
 function GrantoOneRoute() {
-  return GRANTO_ONE_VISIBLE ? <GrantoOne /> : <Navigate to="/work" replace />
+  return GRANTO_ONE_ROUTE_ENABLED ? <GrantoOne /> : <Navigate to="/work" replace />
 }
 
 export default function AppRouter() {

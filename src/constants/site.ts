@@ -9,11 +9,15 @@ export const LAYOUT_CLASSES = {
   about: 'layout-about',
 } as const
 
-/** Altere para true quando o case Granto One estiver pronto para produção. */
+/**
+ * Granto One — controle de publicação.
+ * false: card visível na /work com bolinha cinza "case soon"; rota /granto-one só em dev.
+ * true:  card clicável com "Read case"; rota /granto-one ativa em produção.
+ */
 export const GRANTO_ONE_PUBLISHED = false
 
-/** Visível em dev enquanto não publicado; em produção depende de GRANTO_ONE_PUBLISHED. */
-export const GRANTO_ONE_VISIBLE =
+/** Rota /granto-one acessível (produção só quando publicado). */
+export const GRANTO_ONE_ROUTE_ENABLED =
   GRANTO_ONE_PUBLISHED || import.meta.env.DEV
 
 export const SOCIAL_LINKS = [
