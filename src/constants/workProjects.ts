@@ -7,7 +7,7 @@ export const WORK_GENETICA_MEDIA = {
 } as const
 
 export const WORK_ADMENTUM_MEDIA = {
-  cardImageSrc: '/admentum/Adv%20-%20Perfil.jpg',
+  cardImageSrc: '/admentum/Adv%20-%20Perfil.webp',
   cardImageAlt: 'Admentum',
   previewImageSrc: '/admentum/admentum1.jpg',
   previewImageAlt: 'Admentum',
