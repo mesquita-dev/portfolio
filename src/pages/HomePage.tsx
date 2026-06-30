@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react'
+import { Link } from 'react-router-dom'
 import AnimatedNavItem, { navLinkClassName } from '../components/AnimatedNavItem.tsx'
 import PreviewPanel, { type PreviewType } from '../components/PreviewPanel.tsx'
 import SiteHeader from '../components/SiteHeader.tsx'
@@ -65,8 +66,8 @@ export default function HomePage() {
             onMouseEnter={showWorkPreview}
             onMouseLeave={hidePreview}
           />
-          <a
-            href="/about"
+          <Link
+            to="/about"
             aria-label="About"
             onMouseEnter={showAboutPreview}
             onMouseLeave={hidePreview}
@@ -75,7 +76,7 @@ export default function HomePage() {
             className={navLinkClassName}
           >
             About
-          </a>
+          </Link>
           <AnimatedNavItem
             primary="Contact"
             secondary="Look left"

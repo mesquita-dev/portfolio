@@ -1,4 +1,5 @@
 import BrasiliaClock from './BrasiliaClock.tsx'
+import InternalLink from './InternalLink.tsx'
 import { ACCENT_HOVER_CLASS, RESUME_URL } from '../constants/site.ts'
 import BackToHomeLink from './BackToHomeLink.tsx'
 
@@ -21,9 +22,9 @@ export default function SiteHeader({ showBackLink = false }: SiteHeaderProps) {
 
       <div className="col-span-2 col-start-3 flex items-center justify-between">
         <p className="m-0">
-          <a href="/" className={ACCENT_HOVER_CLASS}>
+          <InternalLink href="/" className={ACCENT_HOVER_CLASS}>
             Lucas Mesquita
-          </a>
+          </InternalLink>
         </p>
         <a
           href={RESUME_URL}

@@ -1,4 +1,6 @@
 import { ACCENT_HOVER_CLASS } from '../constants/site.ts'
+import { isInternalHref } from '../lib/isInternalHref.ts'
+import InternalLink from './InternalLink.tsx'
 
 const navItemBaseClassName =
   'group m-0 block h-[0.85em] w-full overflow-hidden text-9xl leading-[0.85]'
@@ -54,11 +56,27 @@ export default function AnimatedNavItem({
   const describedBy = ariaDescribedBy ? { 'aria-describedby': ariaDescribedBy } : {}
 
   if (href) {
+    const linkClassName = `${navItemBaseClassName} ${ACCENT_HOVER_CLASS}`
+
+    if (isInternalHref(href)) {
+      return (
+        <InternalLink
+          href={href}
+          {...hoverHandlers}
+          className={linkClassName}
+          aria-label={ariaLabel}
+          {...describedBy}
+        >
+          <NavItemContent primary={primary} secondary={secondary} />
+        </InternalLink>
+      )
+    }
+
     return (
       <a
         href={href}
         {...hoverHandlers}
-        className={`${navItemBaseClassName} ${ACCENT_HOVER_CLASS}`}
+        className={linkClassName}
         aria-label={ariaLabel}
         {...describedBy}
       >
