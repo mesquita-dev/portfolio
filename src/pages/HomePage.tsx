@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import AnimatedNavItem, { navLinkClassName } from '../components/AnimatedNavItem.tsx'
 import PreviewPanel, { type PreviewType } from '../components/PreviewPanel.tsx'
 import SiteHeader from '../components/SiteHeader.tsx'
-import { ACCENT_HOVER_CLASS, LAYOUT_CLASSES, SOCIAL_LINKS } from '../constants/site.ts'
+import { ACCENT_HOVER_CLASS, ACCENT_TEXT_CLASS, LAYOUT_CLASSES, SOCIAL_LINKS } from '../constants/site.ts'
 import { usePageSetup } from '../hooks/usePageSetup.ts'
 
 /**
@@ -38,7 +38,7 @@ export default function HomePage() {
         <div
           id="contact-links"
           aria-label="Contact links"
-          className={`col-span-1 flex flex-col gap-1 self-end text-xs text-gray-400 transition-colors duration-300 focus-within:text-accent${contactHintActive ? ' text-accent' : ''}`}
+          className={`col-span-1 flex flex-col gap-1 self-end text-xs text-gray-400 transition-colors duration-300 focus-within-text-accent${contactHintActive ? ` ${ACCENT_TEXT_CLASS}` : ''}`}
         >
           {SOCIAL_LINKS.map(({ href, label, external }) => (
             <a

@@ -8,6 +8,46 @@
   --color-accent: #ec3406;
 }
 
+/* Accent utilities — definidas em CSS para não depender do purge do Tailwind em prod. */
+@layer utilities {
+  .text-accent {
+    color: #ec3406;
+  }
+
+  .bg-accent {
+    background-color: #ec3406;
+  }
+
+  .outline-accent {
+    outline-color: #ec3406;
+  }
+
+  .hover-text-accent {
+    transition-property: color;
+    transition-duration: 150ms;
+  }
+
+  .group-hover-text-accent {
+    transition-property: color;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  @media (hover: hover) {
+    .hover-text-accent:hover {
+      color: #ec3406;
+    }
+
+    .group:hover .group-hover-text-accent {
+      color: #ec3406;
+    }
+  }
+
+  .focus-within-text-accent:focus-within {
+    color: #ec3406;
+  }
+}
+
 html {
   min-height: 100%;
   overflow-x: hidden;
