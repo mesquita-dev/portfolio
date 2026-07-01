@@ -38,7 +38,7 @@ export default function HomePage() {
         <div
           id="contact-links"
           aria-label="Contact links"
-          className={`col-span-1 flex flex-col gap-1 self-end text-xs text-gray-400 transition-colors duration-300 focus-within:text-black${contactHintActive ? ' text-black' : ''}`}
+          className={`col-span-1 flex flex-col gap-1 self-end text-xs text-gray-400 transition-colors duration-300 focus-within:text-accent${contactHintActive ? ' text-accent' : ''}`}
         >
           {SOCIAL_LINKS.map(({ href, label, external }) => (
             <a

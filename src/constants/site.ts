@@ -43,4 +43,10 @@ export const SOCIAL_LINKS = [
   },
 ] as const
 
-export const ACCENT_HOVER_CLASS = 'transition-colors hover:text-[#EC3406]'
+/** Laranja de destaque — mesma cor da bolinha "Read case". */
+export const ACCENT_COLOR = '#EC3406'
+
+export const ACCENT_HOVER_CLASS = 'transition-colors hover:text-accent'
+
+export const GROUP_HOVER_ACCENT_CLASS =
+  'transition-colors duration-300 ease-out group-hover:text-accent'

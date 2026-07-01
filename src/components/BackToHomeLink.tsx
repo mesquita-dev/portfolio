@@ -1,10 +1,11 @@
 import InternalLink from './InternalLink.tsx'
+import { ACCENT_HOVER_CLASS } from '../constants/site.ts'
 
 export default function BackToHomeLink() {
   return (
     <InternalLink
       href="/"
-      className="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-[#EC3406]"
+      className={`inline-flex items-center gap-2 text-gray-400 ${ACCENT_HOVER_CLASS}`}
     >
       <svg
         width={16}

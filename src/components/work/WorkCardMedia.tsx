@@ -49,7 +49,7 @@ export default function WorkCardMedia({
           className={
             disabled
               ? 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gray-200 text-center text-xs leading-tight text-gray-500'
-              : 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#EC3406] text-center text-xs leading-tight text-white'
+              : 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-center text-xs leading-tight text-white'
           }
           style={{ left: pointer.x, top: pointer.y }}
         >
