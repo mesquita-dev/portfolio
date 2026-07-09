@@ -44,7 +44,7 @@ export default function ScrollRevealBlock({
         'flex flex-col gap-1',
         prefersReducedMotion
           ? ''
-          : 'transition-all duration-700 ease-out',
+          : 'transition-[opacity,transform] duration-700 ease-out',
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0',
         className,
       ]

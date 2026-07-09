@@ -6,7 +6,7 @@ export default function CaseStudyBackToTop() {
       <button
         type="button"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`m-0 cursor-pointer border-0 bg-transparent p-0 font-bebas-neue text-7xl leading-[0.85] ${ACCENT_HOVER_CLASS}`}
+        className={`hit-area-40 m-0 cursor-pointer border-0 bg-transparent p-0 font-bebas-neue text-7xl leading-[0.85] press-scale ${ACCENT_HOVER_CLASS}`}
         aria-label="Back to top"
       >
         Back to top

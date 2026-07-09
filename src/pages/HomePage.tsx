@@ -45,7 +45,7 @@ export default function HomePage() {
               key={href}
               href={href}
               {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
-              className={`m-0 ${ACCENT_HOVER_CLASS}`}
+              className={`hit-area-40 relative m-0 ${ACCENT_HOVER_CLASS}`}
             >
               {label}
             </a>

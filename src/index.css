@@ -46,6 +46,35 @@
   .focus-within-text-accent:focus-within {
     color: #ec3406;
   }
+
+  .press-scale {
+    transition-property: transform;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+  }
+
+  .press-scale:active {
+    scale: 0.96;
+  }
+
+  .hit-area-40 {
+    position: relative;
+  }
+
+  .hit-area-40::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+  }
+
+  .image-outline {
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    outline-offset: -1px;
+  }
 }
 
 html {
@@ -118,6 +147,7 @@ html.layout-about body {
   overflow-x: hidden !important;
   overflow-y: visible !important;
   font-family: var(--font-aileron);
+  text-wrap: pretty;
 }
 
 html.layout-about #root {
@@ -157,7 +187,9 @@ html.layout-home #root {
 
 html.layout-home body {
   font-family: var(--font-aileron);
+  text-wrap: pretty;
 }
+
 
 html.layout-home #root {
   display: block;

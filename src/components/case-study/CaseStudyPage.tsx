@@ -23,7 +23,7 @@ export default function CaseStudyPage({
       <SiteHeader showBackLink />
 
       <main id="main-content" className="col-span-4 mt-32 flex flex-col gap-16 pb-16">
-        <h1 className="m-0 font-bebas-neue text-9xl leading-[0.85]">{title}</h1>
+        <h1 className="m-0 text-balance font-bebas-neue text-9xl leading-[0.85]">{title}</h1>
 
         <div className="flex flex-col gap-6">
           <CaseStudyMeta meta={meta} />

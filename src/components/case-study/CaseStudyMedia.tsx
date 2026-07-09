@@ -8,7 +8,7 @@ import {
 import type { CaseStudyMediaItem } from './types.ts'
 
 const mediaBoxClassName =
-  'flex h-[480px] w-full items-center justify-center overflow-hidden'
+  'flex h-[480px] w-full items-center justify-center overflow-hidden [&_img]:outline-none'
 
 const phoneScreenshotClassName =
   'block h-auto max-h-[380px] w-auto max-w-[65%] object-contain'

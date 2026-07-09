@@ -29,7 +29,7 @@ export default function WorkPage() {
       <SiteHeader showBackLink />
 
       <main id="main-content" className="col-span-4 mt-32 flex flex-col gap-16 pb-16">
-        <h1 className="m-0 font-bebas-neue text-9xl leading-[0.85]">work</h1>
+        <h1 className="m-0 text-balance font-bebas-neue text-9xl leading-[0.85]">work</h1>
 
         <div className="grid grid-cols-4 items-start gap-x-6 gap-y-6">
           <WorkCard

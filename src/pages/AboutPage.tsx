@@ -19,7 +19,7 @@ export default function AboutPage() {
       <SiteHeader showBackLink />
 
       <main id="main-content" className="col-span-4 mt-32 flex flex-col gap-16 pb-16">
-        <h1 className="m-0 font-bebas-neue text-9xl leading-[0.85]">about</h1>
+        <h1 className="m-0 text-balance font-bebas-neue text-9xl leading-[0.85]">about</h1>
 
         <div className="grid grid-cols-4 gap-6">
           <div className="col-span-1 flex w-full min-w-0 flex-col gap-16 self-start">

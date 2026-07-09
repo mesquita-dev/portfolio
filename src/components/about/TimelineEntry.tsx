@@ -14,7 +14,7 @@ export default function TimelineEntry({
       <h3 className="m-0">{title}</h3>
       <div className="flex justify-between gap-6">
         <p className="m-0 text-gray-400">{org}</p>
-        <p className="m-0 text-gray-400">{period}</p>
+        <p className="m-0 tabular-nums text-gray-400">{period}</p>
       </div>
     </div>
   )

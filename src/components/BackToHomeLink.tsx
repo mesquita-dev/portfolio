@@ -5,7 +5,7 @@ export default function BackToHomeLink() {
   return (
     <InternalLink
       href="/"
-      className={`inline-flex items-center gap-2 text-gray-400 ${ACCENT_HOVER_CLASS}`}
+      className={`hit-area-40 inline-flex items-center gap-2 pl-0.5 text-gray-400 press-scale ${ACCENT_HOVER_CLASS}`}
     >
       <svg
         width={16}

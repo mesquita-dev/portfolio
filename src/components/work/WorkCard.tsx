@@ -26,7 +26,7 @@ export default function WorkCard({
 
   const content = (
     <>
-      <h2 className={`m-0 ${GROUP_HOVER_ACCENT_CLASS}`}>
+      <h2 className={`m-0 text-balance ${GROUP_HOVER_ACCENT_CLASS}`}>
         {title}
       </h2>
       {media}
@@ -44,7 +44,7 @@ export default function WorkCard({
   return (
     <InternalLink
       href={href}
-      className={`group flex cursor-pointer flex-col gap-2 self-start outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${className}`}
+      className={`group flex cursor-pointer flex-col gap-2 self-start outline-none press-scale focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${className}`}
     >
       {content}
     </InternalLink>

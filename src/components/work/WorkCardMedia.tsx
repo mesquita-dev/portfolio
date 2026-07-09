@@ -48,8 +48,8 @@ export default function WorkCardMedia({
           aria-hidden
           className={
             disabled
-              ? 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gray-200 text-center text-xs leading-tight text-gray-500'
-              : 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-center text-xs leading-tight text-white'
+              ? 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gray-200 text-center text-xs leading-tight text-gray-500 transition-[opacity,transform] duration-200 ease-out'
+              : 'pointer-events-none absolute z-10 flex size-[120px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-center text-xs leading-tight text-white transition-[opacity,transform] duration-200 ease-out'
           }
           style={{ left: pointer.x, top: pointer.y }}
         >

@@ -48,7 +48,7 @@ export default function CaseStudyMeta({ meta }: CaseStudyMetaProps) {
       </MetaField>
 
       <MetaField label="year">
-        <p className="m-0">{meta.year}</p>
+        <p className="m-0 tabular-nums">{meta.year}</p>
       </MetaField>
     </div>
   )

@@ -16,9 +16,9 @@ function PreviewPanel({ activePreview }: PreviewPanelProps) {
 
   return (
     <div
-      className={`relative col-start-2 col-span-1 min-h-0 w-full self-stretch transition-opacity duration-300 ${
+      className={`relative col-start-2 col-span-1 min-h-0 w-full self-stretch transition-[opacity,transform] duration-300 ease-out ${
         isWorkPreview ? 'overflow-visible' : 'overflow-hidden'
-      } ${isVisible ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+      } ${isVisible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'}`}
     >
       <div
         className={`absolute inset-x-0 bottom-0 top-0 min-h-0 ${

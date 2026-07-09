@@ -22,7 +22,7 @@ export default function SiteHeader({ showBackLink = false }: SiteHeaderProps) {
 
       <div className="col-span-2 col-start-3 flex items-center justify-between">
         <p className="m-0">
-          <InternalLink href="/" className={ACCENT_HOVER_CLASS}>
+          <InternalLink href="/" className={`hit-area-40 ${ACCENT_HOVER_CLASS}`}>
             Lucas Mesquita
           </InternalLink>
         </p>
@@ -30,7 +30,7 @@ export default function SiteHeader({ showBackLink = false }: SiteHeaderProps) {
           href={RESUME_URL}
           target="_blank"
           rel="noreferrer"
-          className={`m-0 text-gray-400 ${ACCENT_HOVER_CLASS}`}
+          className={`hit-area-40 m-0 text-gray-400 ${ACCENT_HOVER_CLASS}`}
         >
           Resume
         </a>
