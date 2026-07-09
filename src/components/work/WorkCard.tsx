@@ -6,20 +6,29 @@ import WorkCardMedia from './WorkCardMedia.tsx'
 type WorkCardProps = {
   href?: string
   disabled?: boolean
+  ctaLabel?: string
   title: string
   className: string
   children: ReactNode
 }
 
+const linkClassName =
+  'group flex cursor-pointer flex-col gap-2 self-start outline-none press-scale focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent'
+
+function isExternalHref(href: string) {
+  return href.startsWith('http://') || href.startsWith('https://')
+}
+
 export default function WorkCard({
   href,
   disabled = false,
+  ctaLabel,
   title,
   className,
   children,
 }: WorkCardProps) {
   const media = (
-    <WorkCardMedia href={href} disabled={disabled}>
+    <WorkCardMedia href={href} disabled={disabled} ctaLabel={ctaLabel}>
       {children}
     </WorkCardMedia>
   )
@@ -41,10 +50,23 @@ export default function WorkCard({
     )
   }
 
+  if (isExternalHref(href)) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${linkClassName} ${className}`}
+      >
+        {content}
+      </a>
+    )
+  }
+
   return (
     <InternalLink
       href={href}
-      className={`group flex cursor-pointer flex-col gap-2 self-start outline-none press-scale focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${className}`}
+      className={`${linkClassName} ${className}`}
     >
       {content}
     </InternalLink>

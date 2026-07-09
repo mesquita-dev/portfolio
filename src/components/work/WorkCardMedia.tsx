@@ -12,12 +12,14 @@ const workCardMediaDisabledClassName =
 type WorkCardMediaProps = {
   href?: string
   disabled?: boolean
+  ctaLabel?: string
   children: ReactNode
 }
 
 export default function WorkCardMedia({
   href,
   disabled = false,
+  ctaLabel = 'Read case',
   children,
 }: WorkCardMediaProps) {
   const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null)
@@ -53,7 +55,7 @@ export default function WorkCardMedia({
           }
           style={{ left: pointer.x, top: pointer.y }}
         >
-          {disabled ? 'case soon' : 'Read case'}
+          {disabled ? 'case soon' : ctaLabel}
         </span>
       ) : null}
     </div>

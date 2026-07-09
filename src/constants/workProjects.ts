@@ -19,6 +19,14 @@ export const WORK_PETSY_MEDIA = {
   backgroundColor: '#89D4FF',
 } as const
 
+export const WORK_ANIMATIONS_MEDIA = {
+  videoSrc: '/works/animations.mp4',
+  ariaLabel: 'Animations',
+  backgroundColor: '#eaeaea',
+  href: 'https://mesquita-dev.github.io/animation-practice/',
+  ctaLabel: 'See live',
+} as const
+
 export const WORK_GRANTO_ONE_MEDIA = {
   imageSrc: '/granto-one/interna-oportunidade.webp',
   imageAlt: 'Granto One',

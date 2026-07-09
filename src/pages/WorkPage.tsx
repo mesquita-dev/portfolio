@@ -12,6 +12,7 @@ import {
 import { GRANTO_ONE_PUBLISHED, LAYOUT_CLASSES } from '../constants/site.ts'
 import {
   WORK_ADMENTUM_MEDIA,
+  WORK_ANIMATIONS_MEDIA,
   WORK_GENETICA_MEDIA,
   WORK_GRANTO_ONE_MEDIA,
   WORK_PETSY_MEDIA,
@@ -108,6 +109,24 @@ export default function WorkPage() {
                   />
                 </div>
               </div>
+            </div>
+          </WorkCard>
+
+          <WorkCard
+            href={WORK_ANIMATIONS_MEDIA.href}
+            ctaLabel={WORK_ANIMATIONS_MEDIA.ctaLabel}
+            title="Repository with microinteractions and UI motion"
+            className="col-span-2 col-start-1 row-start-3"
+          >
+            <div
+              className={`${workProjectMediaBoxClassName}`}
+              style={{ backgroundColor: WORK_ANIMATIONS_MEDIA.backgroundColor }}
+            >
+              <LazyVideo
+                src={WORK_ANIMATIONS_MEDIA.videoSrc}
+                className={`${phoneScreenshotClassName} rounded-xl`}
+                aria-label={WORK_ANIMATIONS_MEDIA.ariaLabel}
+              />
             </div>
           </WorkCard>
         </div>
