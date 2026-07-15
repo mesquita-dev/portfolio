@@ -11,7 +11,7 @@ export default function SiteHeader({ showBackLink = false }: SiteHeaderProps) {
   return (
     <header className="col-span-4 grid grid-cols-4 items-center gap-6">
       <p className="m-0 text-gray-400">
-        <BrasiliaClock /> — Brazil
+        <BrasiliaClock /> — Brazil // 2026
       </p>
 
       {showBackLink ? (
