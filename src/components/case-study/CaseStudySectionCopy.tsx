@@ -16,13 +16,15 @@ export default function CaseStudySectionCopy({
   const copy = (
     <>
       <CaseStudySectionTitle>{label}</CaseStudySectionTitle>
-      <div className="flex flex-col gap-3">{content}</div>
+      <div className="mt-8 flex max-w-xl flex-col gap-4 text-pretty text-sm leading-relaxed text-black/65">
+        {content}
+      </div>
     </>
   )
 
   if (alwaysVisible) {
-    return <div className="flex flex-col gap-1">{copy}</div>
+    return <div>{copy}</div>
   }
 
-  return <ScrollRevealBlock className="flex flex-col gap-1">{copy}</ScrollRevealBlock>
+  return <ScrollRevealBlock>{copy}</ScrollRevealBlock>
 }

@@ -1,4 +1,5 @@
 import type { CaseStudyConfig } from '../../components/case-study/types.ts'
+import { WORK_GENETICA_MEDIA } from '../workProjects.ts'
 
 const geneticaGallery = [
   {
@@ -50,7 +51,15 @@ const geneticaGallery = [
 ]
 
 export const geneticaCaseStudy = {
-  title: 'genetica mais',
+  title: 'Genética Mais',
+  eyebrow: 'Marketplace concept',
+  summary:
+    'A marketplace concept for bovine genetics, taken from firsthand industry insight to field validation with real users.',
+  accentColor: '#80b36a',
+  hero: {
+    src: WORK_GENETICA_MEDIA.heroSrc,
+    alt: WORK_GENETICA_MEDIA.heroAlt,
+  },
   meta: {
     role: 'Product Designer',
     team: ['Myself'],
@@ -61,7 +70,7 @@ export const geneticaCaseStudy = {
   sections: [
     {
       id: 'agro-market',
-      label: 'Understanding the agro market',
+      label: 'Context',
       copyGroup: 'narrative',
       copyOnly: true,
       content: (
@@ -78,7 +87,7 @@ export const geneticaCaseStudy = {
     },
     {
       id: 'overview',
-      label: 'Where did the idea of ​​genetics come from?',
+      label: 'The opportunity',
       copyGroup: 'narrative',
       mediaSlice: [0, 4] as const,
       content: (
@@ -94,7 +103,7 @@ export const geneticaCaseStudy = {
     },
     {
       id: 'process',
-      label: 'process',
+      label: 'Designing the concept',
       copyGroup: 'narrative',
       revealOnScroll: true,
       mediaSlice: [4, 5] as const,
@@ -117,7 +126,7 @@ export const geneticaCaseStudy = {
     },
     {
       id: 'process-duplicate',
-      label: 'field study with real users',
+      label: 'Field validation',
       copyGroup: 'narrative',
       copyOnly: true,
       revealOnScroll: true,
@@ -143,7 +152,7 @@ export const geneticaCaseStudy = {
     },
     {
       id: 'result',
-      label: 'result',
+      label: 'Outcome & learning',
       copyGroup: 'narrative',
       revealOnScroll: true,
       mediaSlice: [5, 7] as const,
@@ -157,4 +166,8 @@ export const geneticaCaseStudy = {
       ),
     },
   ],
+  nextProject: {
+    title: 'Admentum',
+    href: '/admentum',
+  },
 } satisfies CaseStudyConfig

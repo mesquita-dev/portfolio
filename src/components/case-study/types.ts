@@ -56,8 +56,19 @@ export type CaseStudySectionData = {
 
 export type CaseStudyConfig = {
   title: string
+  summary?: string
+  eyebrow?: string
+  accentColor?: string
+  hero?: {
+    src: string
+    alt: string
+  }
   meta: CaseStudyMeta
   gallery?: CaseStudyMediaItem[]
   sections: CaseStudySectionData[]
   showBackToTop?: boolean
+  nextProject?: {
+    title: string
+    href: string
+  }
 }

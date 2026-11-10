@@ -7,6 +7,7 @@ export const GENETICA_BACKGROUND_URL =
 export const LAYOUT_CLASSES = {
   home: 'layout-home',
   about: 'layout-about',
+  editorial: 'layout-editorial',
 } as const
 
 /**
@@ -14,7 +15,7 @@ export const LAYOUT_CLASSES = {
  * false: card visível na /work com bolinha cinza "case soon"; rota /granto-one só em dev.
  * true:  card clicável com "Read case"; rota /granto-one ativa em produção.
  */
-export const GRANTO_ONE_PUBLISHED = false
+export const GRANTO_ONE_PUBLISHED = true
 
 /** Rota /granto-one acessível (produção só quando publicado). */
 export const GRANTO_ONE_ROUTE_ENABLED =

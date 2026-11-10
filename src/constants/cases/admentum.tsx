@@ -1,4 +1,5 @@
 import type { CaseStudyConfig } from '../../components/case-study/types.ts'
+import { WORK_ADMENTUM_MEDIA } from '../workProjects.ts'
 
 const admentumGallery = [
   { type: 'screen-image' as const, src: '/admentum/admentum1.jpg', alt: 'Admentum capa', variant: 'cover' as const },
@@ -18,18 +19,26 @@ const admentumGallery = [
 ]
 
 export const admentumCaseStudy = {
-  title: 'admentum',
+  title: 'Admentum',
+  eyebrow: 'Legal services platform',
+  summary:
+    'A product built from zero to connect clients and lawyers through discovery, scheduling and remote meetings.',
+  accentColor: '#d8ff69',
+  hero: {
+    src: WORK_ADMENTUM_MEDIA.heroSrc,
+    alt: WORK_ADMENTUM_MEDIA.heroAlt,
+  },
   meta: {
     role: 'Founder / Design Engineer',
     team: ['Me', 'Bruno Silva — Co-founder'],
     stacks: ['Figma', 'React', 'Tailwind', 'TypeScript', 'Storybook', 'Motion', 'Cursor'],
-    year: '2025 — Ongoing',
+    year: '2025 — 2026',
   },
   gallery: admentumGallery,
   sections: [
     {
       id: 'overview',
-      label: 'overview',
+      label: 'Context',
       copyGroup: 'narrative',
       mediaSlice: [0, 5] as const,
       content: (
@@ -53,7 +62,7 @@ export const admentumCaseStudy = {
     },
     {
       id: 'process',
-      label: 'understanding the problem',
+      label: 'The challenge',
       copyGroup: 'narrative',
       revealOnScroll: true,
       mediaSlice: [5, 10] as const,
@@ -72,7 +81,7 @@ export const admentumCaseStudy = {
     },
     {
       id: 'building',
-      label: 'Admentum creation process',
+      label: 'Building the product',
       copyGroup: 'narrative',
       copyOnly: true,
       revealOnScroll: true,
@@ -101,18 +110,22 @@ export const admentumCaseStudy = {
     },
     {
       id: 'status',
-      label: 'next steps of the admentum',
+      label: 'Outcome & learning',
       copyGroup: 'narrative',
       revealOnScroll: true,
       mediaSlice: [10, 14] as const,
       content: (
         <p className="m-0">
-          Today Admentum is up and running with a test user. We are currently
-          making the final refinements and preparing for its launch. I am promoting
-          it so that people can find lawyers and schedule meetings, and I am also
-          looking for lawyers to register on the platform.
+          Admentum reached a working stage with a test user and validated the core
+          product flow. I am no longer actively developing the platform, but the
+          project became an important step in my transition from designing
+          interfaces to building production systems end to end.
         </p>
       ),
     },
   ],
+  nextProject: {
+    title: 'Granto One',
+    href: '/granto-one',
+  },
 } satisfies CaseStudyConfig

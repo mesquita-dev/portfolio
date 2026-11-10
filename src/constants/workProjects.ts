@@ -4,6 +4,8 @@ export const WORK_GENETICA_MEDIA = {
   phoneImageSrc: '/genetica/Start.png',
   phoneImageAlt: 'Genetica Mais',
   backgroundUrl: GENETICA_BACKGROUND_URL,
+  heroSrc: '/works/heroes/genetica.webp',
+  heroAlt: 'Genética Mais mobile app splash screen',
 } as const
 
 export const WORK_ADMENTUM_MEDIA = {
@@ -11,12 +13,16 @@ export const WORK_ADMENTUM_MEDIA = {
   cardImageAlt: 'Admentum',
   previewImageSrc: '/admentum/admentum1.jpg',
   previewImageAlt: 'Admentum',
+  heroSrc: '/works/heroes/admentum.webp',
+  heroAlt: 'Admentum lawyer dashboard on laptop',
 } as const
 
 export const WORK_PETSY_MEDIA = {
   videoSrc: '/works/petsy.mp4',
   ariaLabel: 'Petsy',
   backgroundColor: '#89D4FF',
+  heroSrc: '/works/heroes/petsy.webp',
+  heroAlt: 'Petsy mobile login screen',
 } as const
 
 export const WORK_ANIMATIONS_MEDIA = {
@@ -31,4 +37,6 @@ export const WORK_GRANTO_ONE_MEDIA = {
   imageSrc: '/granto-one/interna-oportunidade.webp',
   imageAlt: 'Granto One',
   backgroundColor: '#f4edff',
+  heroSrc: '/works/heroes/granto-one.webp',
+  heroAlt: 'Granto One opportunity management interface',
 } as const

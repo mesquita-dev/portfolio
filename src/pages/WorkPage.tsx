@@ -2,14 +2,7 @@ import SiteHeader from '../components/SiteHeader.tsx'
 import LazyVideo from '../components/LazyVideo.tsx'
 import WorkCard from '../components/work/WorkCard.tsx'
 import { workProjectMediaBoxClassName } from '../components/work/WorkCardMedia.tsx'
-import {
-  laptopFrameWorkClassName,
-  laptopFrameWorkWideClassName,
-  laptopMediaWrapperClassName,
-  laptopScreenClassName,
-  laptopScreenWorkWideClassName,
-} from '../components/case-study/laptopFrameClassNames.ts'
-import { GRANTO_ONE_PUBLISHED, LAYOUT_CLASSES } from '../constants/site.ts'
+import { LAYOUT_CLASSES } from '../constants/site.ts'
 import {
   WORK_ADMENTUM_MEDIA,
   WORK_ANIMATIONS_MEDIA,
@@ -20,7 +13,12 @@ import {
 import { usePageSetup } from '../hooks/usePageSetup.ts'
 
 const phoneScreenshotClassName =
-  'my-[40px] block h-auto max-h-[90%] w-auto max-w-[75%] object-contain'
+  'my-[40px] block h-auto max-h-[90%] w-auto max-w-[75%] rounded-xl object-contain'
+
+const heroMediaBoxClassName =
+  'relative aspect-video w-full overflow-hidden bg-[#11110f]'
+
+const heroImageClassName = 'h-full w-full object-cover object-center'
 
 export default function WorkPage() {
   usePageSetup(LAYOUT_CLASSES.about)
@@ -38,14 +36,11 @@ export default function WorkPage() {
             title="E-commerce app for bovine embryos"
             className="col-span-2 col-start-1 row-start-1"
           >
-            <div
-              className={`${workProjectMediaBoxClassName} bg-cover bg-center`}
-              style={{ backgroundImage: `url(${WORK_GENETICA_MEDIA.backgroundUrl})` }}
-            >
+            <div className={heroMediaBoxClassName}>
               <img
-                src={WORK_GENETICA_MEDIA.phoneImageSrc}
-                alt={WORK_GENETICA_MEDIA.phoneImageAlt}
-                className={phoneScreenshotClassName}
+                src={WORK_GENETICA_MEDIA.heroSrc}
+                alt={WORK_GENETICA_MEDIA.heroAlt}
+                className={heroImageClassName}
                 loading="lazy"
                 decoding="async"
               />
@@ -57,58 +52,46 @@ export default function WorkPage() {
             title="Platform to find lawyers and an easy way to manage your meetings"
             className="col-span-2 col-start-3 row-start-1"
           >
-            <div className={`${workProjectMediaBoxClassName} bg-[#F2F2F2]`}>
-              <div className={laptopMediaWrapperClassName}>
-                <div className={laptopFrameWorkClassName}>
-                  <img
-                    src={WORK_ADMENTUM_MEDIA.cardImageSrc}
-                    alt={WORK_ADMENTUM_MEDIA.cardImageAlt}
-                    className={laptopScreenClassName}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-            </div>
-          </WorkCard>
-
-          <WorkCard
-            title="Improving the petsitter work"
-            className="col-span-1 col-start-1 row-start-2"
-          >
-            <div
-              className={`${workProjectMediaBoxClassName}`}
-              style={{ backgroundColor: WORK_PETSY_MEDIA.backgroundColor }}
-            >
-              <LazyVideo
-                src={WORK_PETSY_MEDIA.videoSrc}
-                className={`${phoneScreenshotClassName} rounded-xl`}
-                aria-label={WORK_PETSY_MEDIA.ariaLabel}
+            <div className={heroMediaBoxClassName}>
+              <img
+                src={WORK_ADMENTUM_MEDIA.heroSrc}
+                alt={WORK_ADMENTUM_MEDIA.heroAlt}
+                className={heroImageClassName}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </WorkCard>
 
           <WorkCard
-            href={GRANTO_ONE_PUBLISHED ? '/granto-one' : undefined}
-            disabled={!GRANTO_ONE_PUBLISHED}
-            title="Built an internal platform for an insurance brokerage, reducing lead time by 70%."
-            className="col-span-3 col-start-2 row-start-2"
+            href="/petsy"
+            title="Improving the petsitter work"
+            className="col-span-2 col-start-1 row-start-2"
           >
-            <div
-              className={`${workProjectMediaBoxClassName} items-stretch`}
-              style={{ backgroundColor: WORK_GRANTO_ONE_MEDIA.backgroundColor }}
-            >
-              <div className={laptopMediaWrapperClassName}>
-                <div className={laptopFrameWorkWideClassName}>
-                  <img
-                    src={WORK_GRANTO_ONE_MEDIA.imageSrc}
-                    alt={WORK_GRANTO_ONE_MEDIA.imageAlt}
-                    className={laptopScreenWorkWideClassName}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
+            <div className={heroMediaBoxClassName}>
+              <img
+                src={WORK_PETSY_MEDIA.heroSrc}
+                alt={WORK_PETSY_MEDIA.heroAlt}
+                className={heroImageClassName}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </WorkCard>
+
+          <WorkCard
+            href="/granto-one"
+            title="Built an internal platform for an insurance brokerage, reducing lead time by 70%."
+            className="col-span-2 col-start-3 row-start-2"
+          >
+            <div className={heroMediaBoxClassName}>
+              <img
+                src={WORK_GRANTO_ONE_MEDIA.heroSrc}
+                alt={WORK_GRANTO_ONE_MEDIA.heroAlt}
+                className={heroImageClassName}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </WorkCard>
 
@@ -124,7 +107,7 @@ export default function WorkPage() {
             >
               <LazyVideo
                 src={WORK_ANIMATIONS_MEDIA.videoSrc}
-                className={`${phoneScreenshotClassName} rounded-xl`}
+                className={phoneScreenshotClassName}
                 aria-label={WORK_ANIMATIONS_MEDIA.ariaLabel}
               />
             </div>

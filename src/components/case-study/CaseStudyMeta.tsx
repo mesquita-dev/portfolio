@@ -13,16 +13,18 @@ function MetaField({
   children: ReactNode
 }) {
   return (
-    <div className="flex flex-col gap-1">
-      <h2 className="m-0 self-start capitalize text-gray-400">{label}</h2>
-      {children}
+    <div className="flex flex-col gap-3">
+      <h2 className="m-0 self-start text-[0.65rem] font-normal uppercase tracking-[0.08em] opacity-50">
+        {label}
+      </h2>
+      <div className="text-xs leading-relaxed">{children}</div>
     </div>
   )
 }
 
 export default function CaseStudyMeta({ meta }: CaseStudyMetaProps) {
   return (
-    <div className="grid grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-6">
       <MetaField label="role">
         <p className="m-0">{meta.role}</p>
       </MetaField>

@@ -17,28 +17,37 @@ export const aboutPhotos = [
   },
 ] as const
 
-export const experienceEntries = [
+export const experienceEntries: {
+  title: string
+  org: string
+  period: string
+  logo?: string
+}[] = [
   {
     title: 'Founder and Design Engineer',
-    org: 'Admentum',
-    period: '2025 — Actually',
+    org: 'ProRapport',
+    period: '2026 — Actually',
+    logo: '/about/logos/prorapport.png',
   },
   {
     title: 'Senior Product Designer',
     org: 'Edunext',
     period: '2026 — Actually',
+    logo: '/about/logos/edunext.png',
   },
   {
     title: 'Founding Product Designer',
     org: 'Granto Seguros',
     period: '2023 — 2026',
+    logo: '/about/logos/granto.png',
   },
   {
     title: 'Design Engineer',
     org: 'SIX',
     period: '2023 — 2023',
+    logo: '/about/logos/six.png',
   },
-] as const
+]
 
 export const educationEntries = [
   {

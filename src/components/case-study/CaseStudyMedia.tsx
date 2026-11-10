@@ -8,16 +8,16 @@ import {
 import type { CaseStudyMediaItem } from './types.ts'
 
 const mediaBoxClassName =
-  'flex h-[480px] w-full items-center justify-center overflow-hidden [&_img]:outline-none'
+  'flex h-[65svh] min-h-[28rem] max-h-[52rem] w-full items-center justify-center overflow-hidden bg-[#ececea]'
 
 const phoneScreenshotClassName =
-  'block h-auto max-h-[380px] w-auto max-w-[65%] object-contain'
+  'image-outline block h-auto max-h-[78%] w-auto max-w-[72%] rounded-[1.5rem] object-contain shadow-[0_24px_70px_rgba(0,0,0,.16)]'
 
 const phoneScreenshotPairClassName =
-  'block h-auto max-h-[380px] w-auto max-w-[calc(50%-4px)] object-contain'
+  'image-outline block h-auto max-h-[76%] w-auto max-w-[calc(50%-12px)] rounded-[1.25rem] object-contain shadow-[0_20px_50px_rgba(0,0,0,.14)]'
 
 const phoneScreenshotTripleClassName =
-  'block h-auto max-h-[380px] w-auto max-w-[calc(33.333%-6px)] object-contain'
+  'image-outline block h-auto max-h-[72%] w-auto max-w-[calc(33.333%-12px)] rounded-[1rem] object-contain shadow-[0_18px_40px_rgba(0,0,0,.12)]'
 
 function getPhoneGroupImageClassName(imageCount: number) {
   if (imageCount >= 3) return phoneScreenshotTripleClassName
@@ -31,7 +31,7 @@ type CaseStudyMediaProps = {
 export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
   if (item.type === 'placeholder') {
     return (
-      <div className={`${mediaBoxClassName} bg-[#F2F2F2]`}>
+      <div className={mediaBoxClassName}>
         <p className="m-0 text-gray-400">
           {item.message ?? 'Case study soon'}
         </p>
@@ -42,7 +42,7 @@ export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
   if (item.type === 'screen-image') {
     if (item.laptop) {
       return (
-        <div className={`${mediaBoxClassName} bg-[#F2F2F2]`}>
+        <div className={mediaBoxClassName}>
           <div className={laptopMediaWrapperClassName}>
             <div className={laptopFrameClassName}>
               <img
@@ -59,11 +59,15 @@ export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
     }
 
     return (
-      <div className={`${mediaBoxClassName} bg-[#F2F2F2]`}>
+      <div className={mediaBoxClassName}>
         <img
           src={item.src}
           alt={item.alt}
-          className={`h-full w-full object-${item.variant}${item.variant === 'contain' ? ' p-4' : ''}`}
+          className={
+            item.variant === 'contain'
+              ? 'image-outline h-full w-full object-contain p-[clamp(1rem,5vw,5rem)]'
+              : 'image-outline h-full w-full object-cover'
+          }
           loading="lazy"
           decoding="async"
         />
@@ -81,7 +85,7 @@ export default function CaseStudyMedia({ item }: CaseStudyMediaProps) {
         className={`${mediaBoxClassName} bg-cover bg-center`}
         style={backgroundStyle}
       >
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex h-full w-full items-center justify-center gap-4 px-4">
           {item.images.map((image) => (
             <img
               key={image.src}
