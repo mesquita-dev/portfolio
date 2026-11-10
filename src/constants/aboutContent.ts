@@ -74,13 +74,11 @@ export const educationEntries = [
 
 export const awardEntries = [
   {
-    title: 'Winner Hackathon Replit + Resend',
-    org: 'São Paulo',
+    title: 'Campeão do Hackathon da Resend + Replit',
     period: '2026',
   },
   {
-    title: 'Winner Hackathon UBYFOL',
-    org: 'Uberaba',
-    period: '2023',
+    title: 'Campeão do Hackathon Ubyfol',
+    period: '2024',
   },
 ] as const

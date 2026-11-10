@@ -590,16 +590,36 @@ html.layout-editorial #root {
 }
 
 .about-drawer-copy p {
-  margin: 4px 0 0;
+  margin: 12px 0 0;
   color: #848484;
   font-size: 14px;
   line-height: 145%;
   text-wrap: pretty;
 }
 
+.about-drawer-copy h2 + p {
+  margin-top: 4px;
+}
+
 .about-drawer-calendar {
   margin-top: 28px;
   min-width: 0;
+  width: 100%;
+}
+
+.about-drawer-calendar .react-activity-calendar {
+  width: 100%;
+  max-width: 100%;
+}
+
+.about-drawer-calendar .react-activity-calendar__scroll-container {
+  overflow: hidden !important;
+  max-width: 100%;
+}
+
+.about-drawer-calendar .react-activity-calendar__calendar {
+  width: 100% !important;
+  height: auto !important;
 }
 
 .about-drawer-eyebrow {
@@ -609,7 +629,6 @@ html.layout-editorial #root {
   font-weight: 500;
   line-height: 115%;
   letter-spacing: 0.02em;
-  text-transform: lowercase;
 }
 
 .about-drawer-section {
@@ -682,6 +701,38 @@ html.layout-editorial #root {
 .about-drawer-experience time {
   flex-shrink: 0;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.about-drawer-awards {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-drawer-awards li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.about-drawer-awards span {
+  color: #fafafa;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.about-drawer-awards time {
+  flex-shrink: 0;
+  color: #848484;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  line-height: 130%;
   white-space: nowrap;
 }
 
